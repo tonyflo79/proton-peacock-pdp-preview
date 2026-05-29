@@ -127,6 +127,7 @@ button{ font-family:inherit; cursor:pointer; }
 .thumb:hover{ opacity:.85; }
 .hero-promise{ margin-top:clamp(36px,5vh,72px); max-width:600px; }
 .hero-promise p{ font-family:var(--ff-display); font-weight:400; font-size:clamp(21px,2.3vw,31px); line-height:1.32; letter-spacing:-0.02em; color:var(--bone); margin:0; }
+.hero-promise.mob-only{ display:none; } /* mobile copy of the promise — shown only <920px, below the trust badges */
 
 .buybox{ position:sticky; top:88px; background:var(--ink-1); border:1px solid var(--hair); border-radius:8px; padding:clamp(24px,2.6vw,38px); }
 .buybox h1{ font-family:var(--ff-display); font-weight:500; font-size:clamp(30px,3vw,42px); line-height:1.04; letter-spacing:-0.025em; margin:18px 0 18px; }
@@ -159,6 +160,9 @@ button{ font-family:inherit; cursor:pointer; }
   .hero{ grid-template-columns:1fr; gap:30px; }
   .buybox{ position:static; }
   .thumbs{ grid-template-columns:repeat(9,1fr); }
+  .buybox > .kicker{ display:none; }              /* hide the Series Three eyebrow on mobile */
+  .hero-promise.desk-only{ display:none; }         /* desktop promise hidden on mobile */
+  .hero-promise.mob-only{ display:block; margin-top:30px; max-width:none; } /* show promise below the trust badges */
 }
 
 /* ---------- Sections ---------- */
@@ -369,7 +373,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
         <button class="thumb" data-src="assets/peacock/08-13mm.png" aria-label="13mm"><img src="assets/peacock/08-13mm.png" alt="" /></button>
         <button class="thumb" data-src="assets/peacock/09-15mm.png" aria-label="15mm"><img src="assets/peacock/09-15mm.png" alt="" /></button>
       </div>
-      <div class="hero-promise">
+      <div class="hero-promise desk-only">
         <p>The paddle that plays the same at month six as the first time you picked it up. <span class="grad">That's what AeroGrade construction gives you</span> — leading to optimized power, spin, feel and control across the long lifetime of the paddle.</p>
       </div>
     </div>
@@ -411,6 +415,11 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
         <div class="badge">Lifetime Warranty on Construction</div>
         <div class="badge">30-Day Money-Back</div>
         <div class="badge">$280 prior retail → relaunch pricing</div>
+      </div>
+
+      <!-- Mobile-only: promise paragraph below the trust badges (hidden on desktop) -->
+      <div class="hero-promise mob-only">
+        <p>The paddle that plays the same at month six as the first time you picked it up. <span class="grad">That's what AeroGrade construction gives you</span> — leading to optimized power, spin, feel and control across the long lifetime of the paddle.</p>
       </div>
     </div>
   </header>

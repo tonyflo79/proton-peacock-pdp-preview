@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Series Three — Project Peacock · Proton Sports</title>
+<link rel="icon" type="image/png" href="assets/brand/proton-atom.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,6 +91,15 @@ button{ font-family:inherit; cursor:pointer; }
 .nav-right{ margin-left:auto; display:flex; align-items:center; gap:22px; font-size:13.5px; color:var(--bone-3); font-weight:500; }
 .nav-right .cart{ color:var(--cy); }
 @media(max-width:880px){ .nav-links{ display:none; } }
+
+/* ---------- Brand logo lockups ---------- */
+.brand-mark{ height:30px; width:auto; display:block; }
+.aero-mark{ height:clamp(30px,3.4vw,46px); width:auto; display:inline-block; vertical-align:-0.16em; margin-right:14px; }
+.foot-logo{ height:48px; width:auto; display:block; margin-bottom:18px; }
+.brandmark-wrap{ position:relative; overflow:hidden; }
+.brandmark-wrap > .wrap{ position:relative; z-index:1; }
+.brandmark-bg{ position:absolute; top:50%; right:-3%; transform:translateY(-50%); width:min(540px,52vw); opacity:0.06; pointer-events:none; user-select:none; z-index:0; }
+@media(max-width:760px){ .brandmark-bg{ right:-26%; width:min(430px,88vw); opacity:0.05; } }
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -333,7 +343,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
 <!-- ============ NAV ============ -->
 <nav class="nav">
-  <a class="brand" href="#top"><span class="dot">p</span> PROTON</a>
+  <a class="brand" href="#top"><img class="brand-mark" src="assets/brand/proton-atom.png" alt="Proton Sports" /> PROTON</a>
   <div class="nav-links">
     <a href="#">Pickleball</a>
     <a href="#">Series Three</a>
@@ -382,7 +392,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="buybox">
       <span class="kicker">Series Three — Project Peacock · Dual-stamp UPA + USA Pickleball</span>
       <h1>Aerospace Technology. <span class="grad">Atomic Foam Core. Optimized Spin.</span> Backed for Life.</h1>
-      <p class="lede">The High-Density Atomic Foam Core, AeroGrade Carbon and Lifetime Warranty on the Construction make this the most durable high-performance paddle in the industry.</p>
+      <p class="lede">The High-Density Atomic Foam Core, AeroGrade Carbon Fiber Face and Lifetime Warranty on the Construction make this the most durable high-performance paddle in the industry.</p>
 
       <hr class="rule" />
 
@@ -480,8 +490,8 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div class="img"><img src="assets/peacock/01-aerograde.png" alt="AeroGrade Construction — the whole build, with feature pointers" /></div>
       <div>
         <span class="kicker">The whole build</span>
-        <h2><span class="grad">AeroGrade Construction™</span></h2>
-        <p><span class="em">AeroGrade Construction™</span> is Proton's paddle build process inspired by our founder's roots as an aerospace industry leader. The rough texture is structurally integrated into the aerospace grade carbon fiber during the cure phase — making the roughness part of the carbon itself. At the heart of the paddle sits the Atomic Foam Core — a dense, consistent foam, drilled with the Proton logo to lighten the head and enlarge the sweet spot. <span class="em">The face is rough because the carbon is rough. The core is consistent because the foam is designed for performance and longevity.</span></p>
+        <h2><img class="aero-mark" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" /><span class="grad">AeroGrade Construction™</span></h2>
+        <p><span class="em">AeroGrade Construction™</span> is Proton's paddle build process inspired by our founder's roots as an aerospace industry leader. The rough texture is structurally integrated into the aerospace grade carbon fiber — making the roughness part of the carbon itself. At the heart of the paddle sits the Atomic Foam Core — a precision-engineered, consistent foam core — drilled with the Proton logo to reduce weight and deliver a larger, more forgiving sweet spot. <span class="em">The face is rough because the carbon is rough. The core is consistent because the foam is designed for performance and longevity.</span></p>
       </div>
     </div>
 
@@ -492,7 +502,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div class="fimg"><img src="assets/peacock/02-foam-core.png" alt="High-Density Atomic Foam Core — cutaway" /></div>
       <div class="ftext">
         <h3 class="ghead">High-Density Atomic Foam Core</h3>
-        <p>A dense, consistent foam at the heart of the paddle. Drilled with the Proton logo to lighten the head and enlarge the sweet spot. Built for extra durability and shot-to-shot consistency.</p>
+        <p>A precision-engineered, consistent foam core is at the heart of the paddle. Drilled with the Proton logo to reduce weight and enlarge the sweet spot. Built for extra durability and shot-to-shot consistency.</p>
       </div>
     </div>
 
@@ -535,11 +545,11 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="founder">
       <div>
         <div class="photo"><img src="assets/peacock/people/charles-darling.jpg" alt="Charles Darling" /></div>
-        <div class="cap">Charles Darling — Aerospace Executive, Proton Sports</div>
+        <div class="cap">Charles Darling — Aerospace Executive, Proton Sports Founder</div>
       </div>
       <div>
         <h2 class="ghead" style="margin-bottom:18px;">The founder behind the build</h2>
-        <p class="body">Charles Darling, an aerospace executive, designed the construction to hold. He brought the same composite-cure discipline used in high-stress structural applications into the paddle: the roughness built into the carbon, the foam tuned to a consistent density, and a lifetime warranty behind the build that has to be defensible because the engineering is real.</p>
+        <p class="body">Charles Darling, an aerospace executive, designed the construction to deliver maximum performance and consistency. He brought the same advanced technology used in high-stress structural applications into the paddle engineering: the roughness built into the carbon, the foam tuned to a consistent density, and a lifetime warranty behind the build that has to be defensible because the engineering is real.</p>
       </div>
     </div>
   </div>
@@ -547,11 +557,12 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
 <!-- ============ COUNTER — What if it's your paddle? ============ -->
 <!-- NOTE: contains the competitor/durability line — client may soften or remove. Editable. -->
-<section class="bg-2 center">
+<section class="bg-2 center brandmark-wrap">
+  <img class="brandmark-bg" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" />
   <div class="wrap">
     <h2 class="ghead" style="font-size:clamp(34px,4.2vw,56px);margin:0 auto 26px;max-width:1000px;">What If It's Your Paddle?</h2>
-    <p class="lede" style="max-width:860px;margin:0 auto;font-size:clamp(18px,1.85vw,23px);">If you've ever felt your spin or your pop fade, the first instinct is to question yourself. Yet many premium paddles begin to degrade in performance around the third or fourth month of active use. The Peacock is engineered so that doesn't happen: roughness built into the carbon, an atomic foam core built for extra durability, and a lifetime warranty behind the build.</p>
-    <p class="proof-quote" style="margin-top:clamp(34px,4vw,52px);"><span class="grad">Pushing the legal maximum of performance. Backed for life.</span></p>
+    <p class="lede" style="max-width:860px;margin:0 auto;font-size:clamp(18px,1.85vw,23px);">If you've ever felt your spin or your pop fade, the first instinct is to question yourself. Yet many premium paddles begin to degrade in performance around the second or third month of active use. The Peacock is engineered so that doesn't happen: roughness built into the carbon, an atomic foam core built for extra durability, and a lifetime warranty behind the build.</p>
+    <p class="proof-quote" style="margin-top:clamp(34px,4vw,52px);"><span class="grad">Pushing paddle design to the legal max. Backed for life.</span></p>
   </div>
 </section>
 
@@ -572,7 +583,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <div class="wrap sel">
     <span class="kicker">Configure</span>
     <h2>Pick your shape. Pick your thickness.</h2>
-    <p class="helper">Same construction across all four. The choice is feel and play style.</p>
+    <p class="helper">Same construction across all four. The choice is feel and style of play.</p>
 
     <div class="sel-group-label">Shape</div>
     <div class="sel-shapes" id="selShapes">
@@ -580,7 +591,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
         <div class="pic"><img src="assets/peacock/06-elongated.png" alt="Elongated paddle" /></div>
         <div>
           <div class="top"><h3>Elongated</h3><span class="p">$195</span></div>
-          <p class="desc">More reach. More speed. Extra spin leverage. A longer hitting surface with a slightly tighter sweet spot — favors singles and reach players.</p>
+          <p class="desc">More reach. More speed. Extra leverage. A longer hitting surface with a slightly tighter sweet spot — favors singles and players who want more speed.</p>
           <div class="state"><i></i><span>Select</span></div>
         </div>
       </button>
@@ -620,32 +631,27 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <details class="qa" open>
       <summary>Will the Peacock be banned at my next tournament?<span class="ico">+</span></summary>
-      <div class="ans"><p>No. Series Three — Project Peacock is dual-stamp certified by both UPA and USA Pickleball, the two governing bodies that set the ceiling for sanctioned tournament play — pushing the legal maximum of performance. One paddle, both rule sets. It is playable at the legal ceiling of every league and tournament that uses either spec. If a future rules change moves the ceiling, we'll address it then.</p></div>
+      <div class="ans"><p>No. Series Three — Project Peacock is dual-stamp certified by both UPA and USA Pickleball, the two governing bodies that set the ceiling for sanctioned tournament play — pushing the legal max. One paddle, both rule sets. It is playable at the legal ceiling of every league and tournament that uses either spec. If a future rule change moves the ceiling, we'll address it then.</p></div>
     </details>
 
     <details class="qa">
       <summary>What does the Lifetime Warranty on Construction actually cover?<span class="ico">+</span></summary>
-      <div class="ans"><p>Coverage on the carbon weave and the Atomic Foam Core for as long as the original owner plays. If the construction of the paddle fails — the weave or the core — Proton stands behind it. The warranty travels with the original owner and is not transferable on resale. Normal surface wear from play is not classified as a construction defect. Claim mechanics confirmed at checkout and care guide.</p></div>
+      <div class="ans"><p>Coverage on the carbon face and the Atomic Foam Core for as long as the original owner plays. If the construction of the paddle fails — the face or the core — Proton stands behind it. The warranty travels with the original owner and is not transferable on resale. Normal surface wear from play is not classified as a construction defect. Claim mechanics confirmed at checkout and care guide.</p></div>
     </details>
 
     <details class="qa">
       <summary>How is the roughness different from a textured or coated paddle?<span class="ico">+</span></summary>
-      <div class="ans"><p>The roughness is part of the carbon weave itself, structurally integrated during construction. It's structural — the face is rough because the carbon is rough. That's a different thing from a finish or treatment that sits on the surface. The texture is built into the aerospace grade carbon fiber during the cure phase, the same composite discipline used in high-stress structural applications.</p></div>
+      <div class="ans"><p>The roughness is part of the carbon itself, structurally integrated during construction. It's structural — the face is rough because the carbon is rough. That's a different thing from a finish or treatment that sits on the surface. The texture is built into the aerospace grade carbon fiber, the same composite discipline used in high-stress structural applications.</p></div>
     </details>
 
     <details class="qa">
       <summary>Elongated or Wide-Body — which one is for me?<span class="ico">+</span></summary>
-      <div class="ans"><p>Elongated has a longer hitting surface and more reach — players who play singles, want extra spin leverage, and accept a slightly tighter sweet spot tend to pick it. Wide-Body has a shorter, wider face with a larger sweet spot — players who play more doubles or want forgiveness on off-center hits tend to pick it. Same construction across both.</p></div>
+      <div class="ans"><p>Elongated has a longer hitting surface and more reach — players who play singles, want more speed, and accept a slightly tighter sweet spot tend to pick it. Wide-Body has a shorter, wider face with a larger sweet spot — players who play more doubles or want forgiveness on off-center hits tend to pick it. Same construction across both.</p></div>
     </details>
 
     <details class="qa">
       <summary>13mm or 15mm — what's the difference?<span class="ico">+</span></summary>
       <div class="ans"><p>13mm is faster pop. Less dwell time on the face, quicker return on counters and put-aways. 15mm is more control. More dwell time on the face, steadier on resets, drops, and dinks. Same Atomic Foam Core, same AeroGrade Construction — the difference is feel.</p></div>
-    </details>
-
-    <details class="qa">
-      <summary>How does the Proton Tour entry credit work?<span class="ico">+</span></summary>
-      <div class="ans"><p>The Construction Commitment includes an entry credit good for one amateur stop on the Proton Tour, redeemable within 12 months of purchase. Redemption mechanics, eligible stops, and regional availability are confirmed at checkout. We'll keep this section current as Tour operations are finalized.</p></div>
     </details>
   </div>
 </section>
@@ -664,10 +670,11 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <div class="lead">Powered by Protons.</div>
+        <img class="foot-logo" src="assets/brand/proton-atom.png" alt="Proton Sports" />
+        <div class="lead">Powered by Proton.</div>
         <div class="blurb">Proton Sports — premium pickleball paddles, designed in the United States. AeroGrade Construction, dual-stamp certified, backed for life.</div>
       </div>
-      <div class="fcol"><div class="h">Shop</div><a href="#">Series Three</a><a href="#">Tour Bag</a><a href="#">Grips</a><a href="#">Care Kit</a></div>
+      <div class="fcol"><div class="h">Shop</div><a href="#">Series Three</a><a href="#">Tour Bag</a><a href="#">Hats</a><div style="font-size:12.5px;color:var(--bone-4);margin-top:10px;line-height:1.5;">Overgrips, apparel and Care Kit soon</div></div>
       <div class="fcol"><div class="h">Story</div><a href="#">Construction</a><a href="#">Charles Darling</a><a href="#">Proton Tour</a></div>
       <div class="fcol"><div class="h">Support</div><a href="#">Warranty</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
       <div class="fcol"><div class="h">Legal</div><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Accessibility</a></div>

@@ -200,7 +200,7 @@ section{ padding-block:clamp(70px,9vw,132px); }
 .aero h2{ font-family:var(--ff-display); font-weight:500; font-size:clamp(34px,4.2vw,56px); line-height:1.02; letter-spacing:-0.025em; margin:18px 0 26px; }
 .aero p{ font-size:clamp(16px,1.45vw,19px); line-height:1.65; color:var(--bone-2); }
 .aero p .em{ color:var(--bone); font-weight:500; }
-@media(max-width:860px){ .aero{ grid-template-columns:1fr; gap:26px; } }
+@media(max-width:860px){ .aero{ grid-template-columns:1fr; gap:22px; } .aero .img{ order:2; } }
 
 /* Feature rows */
 .feat-head{ max-width:1180px; margin:0 auto clamp(40px,5vw,72px); }
@@ -218,7 +218,8 @@ section{ padding-block:clamp(70px,9vw,132px); }
 .feature .ftext p{ font-size:clamp(18px,1.7vw,23px); line-height:1.55; color:var(--bone); font-weight:400; letter-spacing:-0.008em; }
 @media(max-width:820px){
   .feature{ grid-template-columns:1fr; gap:22px; }
-  .feature.flip .ftext{ order:0; }
+  .feature .ftext{ order:1; }
+  .feature .fimg{ order:2; }
 }
 
 .inline-cta{ display:flex; justify-content:center; margin-top:clamp(48px,6vw,84px); }

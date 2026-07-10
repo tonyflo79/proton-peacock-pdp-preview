@@ -1,0 +1,62 @@
+/* ===== Proton light-mode feature-composite system ===== */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+
+:root{
+  --ink:    #0B0C10;   /* titles / darkest text */
+  --ink-2:  #14161C;   /* labels */
+  --ink-3:  #565A64;   /* sub-labels / meta */
+  --line:   #C4C8D0;   /* leader lines */
+  --node:   #8A8F99;   /* leader dots */
+  /* on-white peacock accent (darkened so it reads on light) */
+  --pk-teal:#12A99A;
+  --pk-blue:#2F6FE0;
+  --pk-purp:#7B3FE4;
+  --ff-d:'Clash Display',system-ui,sans-serif;
+  --ff-b:'Hanken Grotesk',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{width:2048px;height:2048px;}
+.stage{
+  position:relative; width:2048px; height:2048px; overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 50% 40%, #FFFFFF 0%, #FBFBFC 46%, #F1F3F6 100%);
+  font-family:var(--ff-b);
+}
+/* paddle */
+.paddle{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  height:76%; width:auto; filter:drop-shadow(0 46px 60px rgba(20,26,40,.20)); }
+.paddle.shift-up{ top:47%; }
+/* leader svg spans whole stage */
+.leads{ position:absolute; inset:0; width:2048px; height:2048px; pointer-events:none; }
+.leads line{ stroke:var(--line); stroke-width:2.2; }
+.leads circle{ fill:var(--node); }
+/* callout labels — sized to match dark originals (cap-height ~34px @2048) */
+.lab{ position:absolute; font-family:var(--ff-b); color:var(--ink-2);
+  font-weight:600; font-size:48px; line-height:1.2; letter-spacing:-0.005em; }
+.lab.r{ text-align:right; }
+.lab .sub{ display:block; font-weight:500; font-size:37px; color:var(--ink-3); letter-spacing:0.01em; margin-top:5px; }
+/* title block — title cap-height ~70px, subtitle cap ~34px (feature) / ~50px (hero) */
+.title{ position:absolute; left:0; right:0; bottom:118px; text-align:center; }
+.title h1{ font-family:var(--ff-d); font-weight:500; color:var(--ink);
+  font-size:103px; letter-spacing:-0.02em; line-height:1; }
+.title .sub{ margin-top:22px; font-family:var(--ff-b); font-weight:600;
+  font-size:47px; letter-spacing:0.035em; text-transform:uppercase;
+  background:linear-gradient(96deg,var(--pk-teal) 0%,var(--pk-blue) 52%,var(--pk-purp) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; display:inline-block; }
+/* hero composites (01 aerograde, 02 foam-core) use a larger subtitle */
+.title.hero .sub{ font-size:70px; }
+/* zoom-loupe inset */
+.loupe{ position:absolute; border:2px solid #DADDE3; border-radius:24px; overflow:hidden;
+  box-shadow:0 30px 60px rgba(20,26,40,.12); background:#fff; }
+.loupe img{ width:100%; height:100%; object-fit:cover; display:block; }
+.loupe-ring{ position:absolute; border:2px solid var(--pk-blue); border-radius:14px; }
+/* circular seal */
+.seal{ position:absolute; border-radius:50%; border:2px solid #D3D7DE;
+  display:grid; place-items:center; text-align:center; background:#fff;
+  box-shadow:0 30px 60px rgba(20,26,40,.10); }
+.seal .in{ border:2px solid var(--pk-blue); border-radius:50%; width:86%; height:86%;
+  display:grid; place-items:center; }
+.seal b{ font-family:var(--ff-d); font-weight:600; color:var(--ink); font-size:62px; line-height:1.02; letter-spacing:-0.01em; }
+.seal small{ display:block; font-family:var(--ff-b); font-weight:600; font-size:26px;
+  letter-spacing:0.12em; text-transform:uppercase; color:var(--pk-blue); margin-top:10px; }

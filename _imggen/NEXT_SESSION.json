@@ -1,0 +1,31 @@
+{
+  "handoff_reason": "Context sentinel D41 RED hard-stop (~249,427 / 250,000). Halted before doing image work to avoid mechanical denial mid-render. NO image work performed this session — only read NEXT_SESSION.md and listed dirs.",
+  "date": "2026-07-10",
+  "repo": "~/code/proton-peacock-pdp-preview",
+  "branch": "feat/light-mode",
+  "constraints": "Do NOT commit, push, or switch branches. system python3 has numpy+scipy+PIL. Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome.",
+  "goal": "Enlarge on-image text on light-mode feature images to MATCH the larger text in the approved DARK originals (_imggen/dark-backup/), and rebuild 02-foam-core with fresh HTML text (no baked-text halo).",
+  "task_definition_source": "The full 5-step task is in the parent agent prompt / memory project_proton_light_mode_rebrand. This JSON restates it so nothing is lost.",
+  "current_pipeline_state": {
+    "base_css": "_imggen/base.css — controls .title h1, .title .sub, .lab, .lab .sub, callout/loupe label classes. CURRENT SIZES TOO SMALL (labels ~30px cap, title smaller than originals). Must be enlarged.",
+    "html_templates": ["01-aerograde.html","02-foam-core.html","03-carbon-face.html","04-dual-stamp.html","05-warranty.html","06-elongated.html","07-wide-body.html","08-13mm.html","09-15mm.html"],
+    "render": "bash _imggen/render.sh NN.html _imggen/out/NN-light.png  (headless Chrome, 2048x2048)",
+    "transparent_paddle_renders": "_imggen/src/ (E-15mm-005.png front, E-13mm-003, S-15mm-003, S-13mm-006, core.png, carbon-weave.png, dual-stamp.png)",
+    "dark_originals_TARGET": "_imggen/dark-backup/01..09.png — these have the CORRECT LARGER text. Measure against these.",
+    "existing_light_renders": "_imggen/out/NN-*-light.png already exist for all 9 but with TEXT TOO SMALL. Must re-render after enlarging.",
+    "note_02": "02-foam-core currently uses recolored baked text with a 'whited-around' halo artifact. recolor_02.py must be abandoned. Rebuild per step 3 below."
+  },
+  "steps": {
+    "1_measure": "Open _imggen/dark-backup/01-aerograde.png, 02-foam-core.png, 06-elongated.png. View tight crops (use PIL to crop title band + a label band, save small PNGs, Read them). MEASURE pixel cap-height in 2048^2 space for (a) big bottom TITLE h1 (expect ~90-110px cap) and (b) callout LABEL text (expect substantially >30px). Record precise numbers.",
+    "2_enlarge": "Edit _imggen/base.css so .title h1, .title .sub, .lab, .lab .sub, and callout/loupe label classes match measured original sizes. Rebalance template positions if larger text collides with paddle. Re-render 01,03,04,05,06,07,08,09 via render.sh.",
+    "3_rebuild_02": "Make TEXT-FREE plate: from _imggen/dark-backup/02-foam-core.png keep ONLY largest non-bg connected component (paddle silhouette) via PIL/scipy.ndimage.label; set all else (bg + baked text + leader lines) to the soft-white studio gradient used elsewhere. Save _imggen/src/core-cutaway-plate.png. VERIFY by viewing: split cutaway paddle alone on clean white, no text, no halos. Then build 02-foam-core.html using that plate + fresh HTML overlays at LARGE size: 4 left callouts (FOAM-INJECTED EDGE GUARD / ELASTIC EVA FOAM PERIMETER / HIGH-DENSITY ATOMIC FOAM CORE / FOAM THROUGH THE HANDLE) with leader lines to correct paddle spots; title 'HIGH-DENSITY ATOMIC FOAM CORE'; subtitle 'DENSE. CONSISTENT. BUILT FOR EXTRA DURABILITY.' Render.",
+    "4_self_review": "For EACH of 9: view final at full res, compare text size vs matching dark-backup original. Confirm (1) title+label match originals' larger size, (2) no halo/whited-around fringe esp 02, (3) clean letter counters, (4) no black edge notches, (5) leader lines land right, (6) paddles pixel-faithful/undistorted, (7) wording exactly matches originals. Iterate until clean. Build 3x3 contact sheet for holistic sizing check. CLIENT IS ANGRY ABOUT BEING QA — do not claim clean without viewing pixels.",
+    "5_install_proof": "Copy 9 clean renders to assets/peacock/NN.png. Recapture proof: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,9200 --virtual-time-budget=12000 --screenshot=\"$HOME/Desktop/proton-peacock-lightmode-FULLPAGE.png\" \"file://$HOME/code/proton-peacock-pdp-preview/index.html\" ; then open index.html."
+  },
+  "report_back_requirements": [
+    "measured target cap-heights (title + labels) and base.css values set",
+    "confirm 02 rebuilt with text-free plate + fresh overlay (halo gone), verified by viewing",
+    "confirm all 9 match originals' larger text and are clean (state what was checked by viewing pixels)",
+    "confirm Desktop full-page proof re-saved (path + dimensions)"
+  ]
+}

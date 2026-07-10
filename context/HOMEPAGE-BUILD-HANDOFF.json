@@ -1,0 +1,74 @@
+{
+  "task": "Build the net-new light-mode PROTON brand HOMEPAGE as home.html in this repo (~/code/proton-peacock-pdp-preview), branch feat/light-mode. Reuse the PDP's light design system verbatim.",
+  "date_handed_off": "2026-07-11",
+  "why_new_hero": "The PDP anchor 'Aerospace Technology. Atomic Foam Core. Optimized Spin. Backed for Life.' is PEACOCK-SPECIFIC (Atomic Foam Core = Peacock's core only; Backed for Life = Peacock's lifetime warranty only). The homepage must lead with UMBRELLA copy true across ALL paddles, then transition into the individual paddles, then round out with the rest of Proton. Anthony (2026-07-11) approved the umbrella hero below and this 3-tier structure.",
+
+  "design_system": {
+    "source": "index.html <style> block (lines ~15-342). REUSE IT: copy the whole :root token set + component CSS into home.html's <head>, or refactor shared CSS into assets/site.css and link from both. Do NOT invent a new visual language.",
+    "tokens": "Light studio surfaces --ink #FFFFFF / --ink-1 #F6F7F9 / --ink-2 #EEF0F4; dark text --bone #0B0C10 / --bone-2 --bone-3 --bone-4; accent --cy #0E97A8, --teal #12A99A; gradients --peacock (bright) and --peacock-ink (darkened, for text via .grad). Fonts: Clash Display (--ff-display, titles) + Hanken Grotesk (--ff-body).",
+    "reusable_components": "nav.nav (sticky, blur), .brand lockup w/ assets/brand/proton-atom.png, .btn + .btn-ghost (peacock gradient), .kicker eyebrow, section + .bg-1/.bg-2 alternating bands, .wrap (max 1240), .feature rows, .aero 2-col tech block, .pros-grid, .founder, .faq (details/summary), footer .fgrid, .sticky-mobile CTA. Keep the same JS patterns (details accordion is native).",
+    "note": "index.html hero uses a PDP buybox (gallery+chips+price). The HOMEPAGE hero is DIFFERENT — a centered/left umbrella statement, NOT a buybox. Build a new .home-hero, don't reuse .buybox."
+  },
+
+  "hero_LOCKED": {
+    "h1": "Aerospace-grade carbon fiber. Roughness-enhanced spin.",
+    "subhead": "With a high-performance core tuned to your game.",
+    "cta_primary": "Find your paddle →  (anchors to #paddles)",
+    "cta_secondary_optional": "Shop Series Three (ghost btn, -> #paddles or index.html)",
+    "dna_strip": ["Carbon Fiber Face", "Optimized Spin", "UPA + USA Pickleball Certified"],
+    "rules": "NO core name (no Atomic Foam Core), NO warranty claim (no Backed for Life) in the hero — those are paddle-specific and belong in Tier 2. H1 can gradient the second sentence via .grad if it reads well. Hero visual = a hero paddle shot (assets/email/wb-peacock.png is a clean white-bg Peacock) OR the 3 paddles lined up; pick what looks best."
+  },
+
+  "structure_3_tiers": {
+    "tier1_umbrella_hero": "Nav + home-hero (h1/subhead/CTA above) + DNA strip. Sets shared aerospace DNA.",
+    "tier2_the_paddles": {
+      "section_head": "A core for every game.  (helper: Same aerospace face and spin across the line — choose the core that matches how you play.)",
+      "cards": [
+        {"name": "Peacock", "series": "Series Three", "core": "Atomic Foam Core", "character": "Control + durability, beginner-friendly", "warranty": "Lifetime warranty", "price_from": "$175", "img": "assets/email/wb-peacock.png (or assets/peacock/07-wide-body.png)", "link": "index.html (LIVE PDP)", "state": "shoppable"},
+        {"name": "Flamingo", "series": "Series Three", "core": "Velocity Hybrid Core", "character": "Power + ultra-responsive, aggressive top-spin drops", "warranty": "NO warranty emphasis — play down durability (Flamingo has no lifetime warranty)", "price_from": "$175", "img": "assets/email/wb-flamingo.png", "link": "coming-soon (light Flamingo PDP not built yet)", "state": "coming soon"},
+        {"name": "Roadrunner", "series": "Series Four", "core": "Touch-Power core (Nomex + PP)", "character": "Touch + power; carbon-Kevlar weave face; single config Elongated 16.5in / 15mm", "warranty": "unconfirmed — do NOT claim lifetime", "price_from": "confirm", "img": "copy from ~/Downloads/2025_10 Proton Paddle Photos/Roadrunner Elongated 15mm/Roadrunner-Elongated-15mm-01.png into assets/roadrunner/", "link": "coming-soon", "state": "coming soon"}
+      ],
+      "coming_soon_treatment": "Anthony's pick pending (last AskUserQuestion was interrupted). DEFAULT: show all 3 cards; Peacock links to index.html; Flamingo/Roadrunner get a subtle 'Coming soon' chip and no dead link. Confirm with Anthony if unsure.",
+      "optional": "Add a 'Find the paddle to match your game' 5-question chemistry quiz entry (canon in clients/proton-sports/2026-05-29-PROTON-PADDLE-DIFFERENCES-AND-QUIZ.md) — can be a CTA button to a quiz, or defer to v2."
+    },
+    "tier3_rest_of_proton": {
+      "note": "Anthony didn't finalize the section set (question interrupted). Recommended set, all reuse PDP content/components:",
+      "sections": [
+        "AeroGrade Construction™ tech story (line-level, shared): reuse .aero block + the AeroGrade feature imagery (assets/peacock/03-carbon-face.png carbon face, roughness-enhanced/optimized spin). Frame as line-wide, not Peacock-only.",
+        "Played at the highest level (proof/pros): reuse .pros-grid + assets/peacock/people/*.png (genie-bouchard, jade-kawamoto, andre-mercado, pablo-tellez).",
+        "The founder + certification: Charles Darling (assets/peacock/people/charles-darling.jpg) — aerospace EXECUTIVE / industry leader (NOT 'aerospace engineer'); UPA + USA Pickleball sanctioning ('pushing the legal maximum of performance').",
+        "FAQ (line-level) + closing CTA anchor ('Find your paddle' -> #paddles).",
+        "Footer (reuse footer .fgrid)."
+      ]
+    }
+  },
+
+  "messaging_canon_MUST_FOLLOW": {
+    "names": "AeroGrade Construction™ (™ first mention only). Peacock core = High-Density Atomic Foam Core (short: Atomic Foam Core). Flamingo core = Velocity Hybrid Core. Feature = 'Roughness Enhanced' + 'Optimized Spin'. Cert = 'UPA + USA Pickleball' (badges: UPA Pro Certified / USA Pickleball Approved).",
+    "forbidden": ["'Coaching compounds on a paddle that holds'", "'painted on' (grit is 'applied')", "'Grit Fade'", "competitor names", "quantitative durability multipliers", "'Tuned' as the core name", "'Atomic Core' alone / 'atomic-foam core'", "aerospace 'engineer' for Charles Darling", "NO compliance/legal/health framing (system rule)"],
+    "flamingo_trap": "When templating off Peacock, STRIP every 'Backed for Life'/lifetime line for Flamingo — it has no lifetime warranty.",
+    "canonical_doc": "clients/proton-sports/2026-05-28-PROTON-MESSAGING-SYSTEM-CANONICAL.md (in client-work repo)"
+  },
+
+  "images": {
+    "peacock_composites": "assets/peacock/01..09.png (the light feature images just rebuilt — can reuse in tier3 tech/proof).",
+    "white_bg_paddles": "assets/email/wb-peacock.png, assets/email/wb-flamingo.png (clean, card-ready).",
+    "roadrunner": "NOT in repo yet — copy from ~/Downloads/2025_10 Proton Paddle Photos/Roadrunner Elongated 15mm/ (e.g. Roadrunner-Elongated-15mm-01.png) into assets/roadrunner/.",
+    "people": "assets/peacock/people/*.png(.jpg).",
+    "brand": "assets/brand/proton-atom.png, proton-wordmark.png."
+  },
+
+  "ship_steps": [
+    "1. Build home.html (tiers 1-3) reusing index.html's CSS system.",
+    "2. Copy Roadrunner card image into assets/roadrunner/.",
+    "3. Render a full-page proof: Chrome --headless=new --window-size=1440,<tall> --screenshot=$HOME/Desktop/proton-HOMEPAGE-lightmode-FULLPAGE.png file://.../home.html ; self-review at full res (Anthony must not be QA).",
+    "4. open home.html; iterate on Anthony's feedback.",
+    "5. Commit + push on feat/light-mode (do NOT merge — merge is Anthony's)."
+  ],
+  "git_state": "feat/light-mode pushed to origin (commit 516088e = light feature images text-enlarge + 02 rebuild). Homepage continues on the same branch.",
+  "open_questions_for_anthony": [
+    "Coming-soon treatment for Flamingo/Roadrunner cards (show all 3 w/ soon-chips = recommended default) vs Peacock-only + teaser.",
+    "Include the 5-Q 'find your paddle' quiz now or defer to v2?",
+    "Roadrunner price + whether it belongs on the homepage yet (Series Four)."
+  ]
+}

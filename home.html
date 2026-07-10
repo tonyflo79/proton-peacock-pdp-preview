@@ -281,6 +281,38 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 @media(max-width:980px){
   .pcards{ grid-template-columns:1fr; max-width:520px; margin-inline:auto; }
 }
+
+/* protonPROS — tour mosaic + reviews */
+.mosaic{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,24px); margin-top:clamp(36px,4vw,56px); }
+.mtile{ margin:0; }
+.mtile .mimg{ aspect-ratio:1/1; border-radius:8px; overflow:hidden; background:#fff; border:1px solid var(--hair); }
+.mtile .mimg img{ width:100%; height:100%; object-fit:cover; }
+.mtile .mimg.cutout{ background:linear-gradient(165deg,var(--ink-1),var(--ink-2)); display:grid; place-items:end center; }
+.mtile .mimg.cutout img{ width:auto; height:92%; object-fit:contain; }
+.mtile figcaption{ margin-top:13px; font-size:13px; color:var(--bone-3); font-weight:500; }
+.reviews{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,24px); margin-top:clamp(28px,3.4vw,44px); }
+.rcard{ background:#fff; border:1px solid var(--hair); border-radius:8px; padding:clamp(22px,2.4vw,30px); display:flex; flex-direction:column; }
+.rcard .stars{ font-size:17px; letter-spacing:0.22em; margin-bottom:14px; }
+.rcard p{ font-family:var(--ff-display); font-weight:400; font-size:clamp(16.5px,1.5vw,19px); line-height:1.42; letter-spacing:-0.008em; color:var(--bone); margin:0 0 18px; }
+.rcard .rname{ margin-top:auto; font-size:12.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--cy); }
+@media(max-width:980px){
+  .mosaic,.reviews{ grid-template-columns:1fr; max-width:520px; margin-inline:auto; margin-top:34px; }
+}
+
+/* Beyond pickleball — category cards */
+.bcards{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,24px); margin-top:clamp(36px,4vw,56px); }
+.bcards .bpic{
+  --picpad:clamp(18px,2vw,28px);
+  position:relative; aspect-ratio:16/10; background:#fff; border-bottom:1px solid var(--hair);
+}
+.bcards .bpic img{
+  position:absolute; inset:var(--picpad);
+  width:calc(100% - 2*var(--picpad)); height:calc(100% - 2*var(--picpad));
+  object-fit:contain;
+}
+@media(max-width:980px){
+  .bcards{ grid-template-columns:1fr; max-width:520px; margin-inline:auto; }
+}
 </style>
 </head>
 <body>
@@ -289,11 +321,11 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 <nav class="nav">
   <a class="brand" href="#top"><img class="brand-mark" src="assets/brand/proton-atom.png" alt="Proton Sports" /> PROTON</a>
   <div class="nav-links">
-    <a href="#paddles">Paddles</a>
-    <a href="#technology">Technology</a>
-    <a href="#pros">Tour</a>
-    <a href="#story">Story</a>
-    <a href="#faq">Support</a>
+    <a href="#paddles">Pickleball</a>
+    <a href="#beyond">Softball</a>
+    <a href="#pros">protonPROS</a>
+    <a href="#story">About Us</a>
+    <a href="#faq">Warranty</a>
   </div>
   <div class="nav-right">
     <span>Search</span>
@@ -309,8 +341,8 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
   <header class="home-hero">
     <div>
       <span class="kicker">Proton Sports · Pickleball</span>
-      <h1>Aerospace-grade carbon fiber. <span class="grad">Roughness-enhanced spin.</span></h1>
-      <p class="lede">With a high-performance core tuned to your game.</p>
+      <h1>Pickleball, <span class="grad">Engineered Like Aerospace.</span></h1>
+      <p class="lede">Aerospace-grade carbon fiber. Roughness-enhanced spin. With a high-performance core tuned to your game.</p>
       <div class="hero-ctas">
         <a class="btn" href="#paddles">Find your paddle <span class="arr">→</span></a>
         <a class="btn btn-ghost" href="index.html">Shop Series Three</a>
@@ -379,11 +411,105 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
           <div class="core grad">Touch-Power Core</div>
           <p class="desc">Touch and power in one build, behind a carbon-Kevlar weave face. One configuration: Elongated 16.5&Prime; · 15mm.</p>
           <div class="meta">
-            <span class="note" style="margin-top:0;">Pricing at launch</span>
+            <span class="price">$175</span>
             <span class="soon">Coming soon</span>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROTONPROS · TOUR + SOCIAL PROOF ============ -->
+<section id="pros">
+  <div class="wrap">
+    <span class="kicker">protonPROS</span>
+    <h2 class="display" style="font-size:clamp(32px,4vw,52px);margin:16px 0 16px;letter-spacing:-0.025em;line-height:1.04;">Backed by the tour.<br><span class="grad">Rated by players.</span></h2>
+    <p class="lede" style="max-width:780px;">Proton is an official sponsor of the PPA Tour and Major League Pickleball — and the same AeroGrade Construction you can buy is in players' hands from championship courts to your local courts.</p>
+
+    <div class="mosaic">
+      <figure class="mtile">
+        <div class="mimg"><img src="assets/email/jade-world1.jpg" alt="Jade Kawamoto at the Pickleball World Championships" /></div>
+        <figcaption>Jade Kawamoto — Pickleball World Championships</figcaption>
+      </figure>
+      <figure class="mtile">
+        <div class="mimg"><img src="assets/social/official-sponsor-ppa-mlp.png" alt="Proton — official sponsor of the PPA Tour and Major League Pickleball" /></div>
+        <figcaption>Official sponsor of the PPA + MLP</figcaption>
+      </figure>
+      <figure class="mtile">
+        <div class="mimg cutout"><img src="assets/social/meghan-roadrunner.png" alt="Pro player mid-swing with Project Roadrunner" /></div>
+        <figcaption>Project Roadrunner in play on tour</figcaption>
+      </figure>
+    </div>
+
+    <div class="reviews">
+      <div class="rcard">
+        <div class="stars"><span class="grad">★★★★★</span></div>
+        <p>"My go-to paddle! I get so many compliments on the fun colors and designs."</p>
+        <div class="rname">Laura S.</div>
+      </div>
+      <div class="rcard">
+        <div class="stars"><span class="grad">★★★★★</span></div>
+        <p>"As a PPR Certified Teaching Pro, this meets every expectation I have for control, spin and power!"</p>
+        <div class="rname">Taylor H.</div>
+      </div>
+      <div class="rcard">
+        <div class="stars"><span class="grad">★★★★★</span></div>
+        <p>"This paddle is probably the best paddle I have ever used!"</p>
+        <div class="rname">Wade J.</div>
+      </div>
+    </div>
+
+    <p class="pros-foot">Tournament-legal. Built to compete.</p>
+  </div>
+</section>
+
+<!-- ============ BEYOND PICKLEBALL · REST OF PROTON ============ -->
+<section class="bg-1" id="beyond">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Beyond pickleball</span>
+      <h2>One atom. Two sports.</h2>
+      <p class="helper">The same engineering obsession behind the paddles runs the rest of Proton — softball bats, apparel, and gear.</p>
+    </div>
+
+    <div class="bcards">
+      <a class="pcard" href="https://protonsports.com/pages/softball">
+        <div class="bpic"><img src="assets/site/softball-bat-neon.jpg" alt="Proton Series Three Neon softball bat" /></div>
+        <div class="cbody">
+          <span class="series">Softball</span>
+          <h3>Series Three Bats</h3>
+          <p class="desc">Composite softball bats certified for USSSA, USA/ASA and Senior (SSUSA, NSA, ISA) play.</p>
+          <div class="meta">
+            <span class="price"><span class="fr">From</span>$170</span>
+            <span class="go">Shop bats <span class="arr">→</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="pcard" href="https://protonsports.com/collections/apparel">
+        <div class="bpic"><img src="assets/site/ny-atom-tee.png" alt="Proton NY Atom tee" /></div>
+        <div class="cbody">
+          <span class="series">Apparel</span>
+          <h3>Tees, Hoodies &amp; Hats</h3>
+          <p class="desc">Performance tees, hoodies, the Atomic Snapback and the USA Cap — Proton on and off the court.</p>
+          <div class="meta">
+            <span class="price"><span class="fr">From</span>$25</span>
+            <span class="go">Shop apparel <span class="arr">→</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="pcard" href="https://protonsports.com/collections/pickle-ball-gear">
+        <div class="bpic"><img src="assets/site/pickleball-backpack.png" alt="Proton pickleball backpack" /></div>
+        <div class="cbody">
+          <span class="series">Gear</span>
+          <h3>Pickleball Backpack</h3>
+          <p class="desc">A paddle-ready backpack built for the courts — plus caps, accessories and more.</p>
+          <div class="meta">
+            <span class="price">$65</span>
+            <span class="go">Shop gear <span class="arr">→</span></span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -399,40 +525,6 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
         <p><span class="em">AeroGrade Construction</span> is Proton's paddle build process, inspired by our founder's roots as an aerospace industry leader. Every paddle in the line starts the same way: aerospace grade carbon fiber as the hitting surface, with the rough texture structurally integrated into the carbon itself — roughness enhanced for optimized spin, not applied after. <span class="em">The face is rough because the carbon is rough.</span> From there, each paddle takes on its own character through the high-performance core at its heart.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ TIER 3 · PROS ============ -->
-<section id="pros">
-  <div class="wrap">
-    <span class="kicker">Pros play Proton</span>
-    <h2 class="display" style="font-size:clamp(32px,4vw,52px);margin:16px 0 16px;letter-spacing:-0.025em;line-height:1.04;">Played at the highest level.</h2>
-    <p class="lede" style="max-width:780px;">The same AeroGrade Construction you can buy is the paddle many top pros compete with on tour.</p>
-
-    <div class="pros-grid">
-      <figure class="pro">
-        <div class="photo"><img src="assets/peacock/people/jade-kawamoto.png" alt="Jade Kawamoto" /></div>
-        <div class="cap">Jade Kawamoto</div>
-        <div class="role">Proton Tour Pro</div>
-      </figure>
-      <figure class="pro">
-        <div class="photo"><img src="assets/peacock/people/genie-bouchard.png" alt="Genie Bouchard" /></div>
-        <div class="cap">Genie Bouchard</div>
-        <div class="role">Proton Tour Pro</div>
-      </figure>
-      <figure class="pro">
-        <div class="photo"><img src="assets/peacock/people/andre-mercado.png" alt="Andre Mercado" /></div>
-        <div class="cap">Andre Mercado</div>
-        <div class="role">Proton Tour Pro</div>
-      </figure>
-      <figure class="pro">
-        <div class="photo"><img src="assets/peacock/people/pablo-tellez.png" alt="Pablo Tellez" /></div>
-        <div class="cap">Pablo Tellez</div>
-        <div class="role">Proton Tour Pro</div>
-      </figure>
-    </div>
-
-    <p class="pros-foot">Tournament-legal. Built to compete.</p>
   </div>
 </section>
 
@@ -514,12 +606,12 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
       <div>
         <img class="foot-logo" src="assets/brand/proton-atom.png" alt="Proton Sports" />
         <div class="lead">Powered by Proton.</div>
-        <div class="blurb">Proton Sports — premium pickleball paddles, designed in the United States. AeroGrade Construction, certified by UPA + USA Pickleball.</div>
+        <div class="blurb">Proton Sports — premium pickleball paddles and softball bats, designed in the United States. AeroGrade Construction, certified by UPA + USA Pickleball.</div>
       </div>
-      <div class="fcol"><div class="h">Shop</div><a href="index.html">Project Peacock</a><a href="#paddles">Project Flamingo — soon</a><a href="#paddles">Project Roadrunner — soon</a><a href="#">Tour Bag</a><a href="#">Hats</a></div>
-      <div class="fcol"><div class="h">Story</div><a href="#technology">Construction</a><a href="#story">Charles Darling</a><a href="#pros">Proton Tour</a></div>
-      <div class="fcol"><div class="h">Support</div><a href="#">Warranty</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
-      <div class="fcol"><div class="h">Legal</div><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+      <div class="fcol"><div class="h">Pickleball</div><a href="#paddles">Pickleball Paddles</a><a href="https://protonsports.com/collections/apparel">Apparel</a><a href="https://protonsports.com/collections/pickle-ball-gear">Pickleball Gear</a></div>
+      <div class="fcol"><div class="h">Softball</div><a href="https://protonsports.com/collections/frontpage">Softball Bats</a><a href="https://protonsports.com/collections/apparel">Apparel</a><a href="https://protonsports.com/collections/softball-gear">Softball Gear</a></div>
+      <div class="fcol"><div class="h">protonPROS</div><a href="#pros">Pickleball PROS</a><a href="https://protonsports.com/pages/proton-pros-softball">Softball PROS</a></div>
+      <div class="fcol"><div class="h">About · Warranty</div><a href="#story">About Proton</a><a href="https://protonsports.com/pages/our-staff">Our Staff</a><a href="#technology">The Science</a><a href="https://protonsports.com/pages/warranty-information">Warranty Information</a><a href="https://protonsports.com/pages/contact">Contact Us</a></div>
     </div>
     <div class="fbar">
       <span>© 2026 Proton Sports · Designed in the United States</span>

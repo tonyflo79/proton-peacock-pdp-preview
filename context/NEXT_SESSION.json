@@ -1,0 +1,21 @@
+{
+  "updated": "2026-07-15",
+  "repo": "~/code/proton-peacock-pdp-preview",
+  "branch": "feat/light-mode",
+  "state": "Homepage v3 rebuilt to Brant's wireframe (hub layout + video hero) with Mike's MLP cert change. Working tree only — NOT committed/pushed/merged.",
+  "read_first": "context/CURRENT_CONTEXT.md",
+  "changed_files": ["home.html (restructured)", "assets/hero/proton-hero.mp4 (new)", "assets/hero/proton-hero-poster.jpg (new)"],
+  "proofs": ["~/Desktop/proton-HOMEPAGE-v3-wireframe-DESKTOP.png", "~/Desktop/proton-HOMEPAGE-v3-wireframe-MOBILE.png"],
+  "awaiting_anthony": [
+    "Review home.html (opened in browser; video hero plays live).",
+    "OK to commit + push feat/light-mode? (updates the live client Pages demo — outward-facing).",
+    "Official MLP logo art to replace the placeholder slot in the Sponsorships band."
+  ],
+  "open_items": [
+    "MLP logo = styled placeholder slot (flagged in UI + HTML comment at .mlp-slot).",
+    "Instagram feed = static curated grid; wire live IG widget on Shopify build.",
+    "pablo-tellez.png is a 'SIGNED' graphic, not a clean roster headshot."
+  ],
+  "screenshot_tool": "/tmp/shot.mjs (node CDP full-page capture; needed because vh hero breaks tall-window Chrome screenshots). ffmpeg at ~/.local/bin/ffmpeg; ffprobe not installed.",
+  "still_pending_from_before": "Light Flamingo + Roadrunner PDP redos, then swap /flamingo /roadrunner bundles to go all-light."
+}

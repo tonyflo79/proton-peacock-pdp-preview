@@ -108,6 +108,7 @@ section{ padding-block:clamp(58px,7vw,104px); }
   height:38px; display:grid; place-items:center; position:relative; z-index:70; overflow:hidden;
 }
 .promo .msg{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:5px; white-space:nowrap; opacity:0; transition:opacity .6s; padding:0 40px; }
+@media(max-width:520px){ .promo .msg{ font-size:11px; letter-spacing:0.02em; padding:0 12px; } }
 .promo .msg.on{ opacity:1; }
 .promo .msg .p{ color:var(--baby); font-weight:800; margin-right:8px; }
 .promo b{ font-weight:800; }
@@ -304,6 +305,10 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 .ptile:hover{ background:rgba(255,255,255,0.07); border-color:rgba(127,193,234,0.45); }
 .ptile img{ max-height:62px; max-width:82%; width:auto; object-fit:contain; opacity:.82; transition:opacity .25s; }
 .ptile:hover img{ opacity:1; }
+/* image-logo tiles sized to match the typographic tiles' visual weight */
+.ptile.plogo-mlp img{ max-height:44px; max-width:90%; opacity:1; }
+.ptile.plogo-pmb{ padding:14px; }
+.ptile.plogo-pmb img{ max-height:82px; max-width:88%; opacity:1; }
 .ptype{ text-align:center; }
 .ptype .pn{ display:block; font-family:var(--ff-display); font-weight:600; font-size:clamp(16px,1.5vw,19px); letter-spacing:-0.01em; color:#fff; opacity:.82; transition:opacity .25s; line-height:1.12; }
 .ptile:hover .ptype .pn{ opacity:1; }
@@ -332,7 +337,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
 <!-- ============ PROMO / ANNOUNCEMENT BAR ============ -->
 <div class="promo" id="promo" aria-label="Announcements">
-  <div class="msg on"><span class="p">⚛</span> Official Paddle of <b>Major League Pickleball</b></div>
+  <div class="msg on">Official Paddle of <b>Major League Pickleball</b></div>
   <div class="msg">Free U.S. shipping on orders <b>$99+</b></div>
   <div class="msg">New — Series Four: <b>Project Roadrunner</b></div>
 </div>
@@ -362,7 +367,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 <div class="scrim-menu" id="menuScrim"></div>
 <aside class="drawer" id="drawer" aria-label="Site menu">
   <div class="dhead">
-    <span class="dbrand"><img src="assets/brand/proton-wordmark.png" alt="Proton Sports" /></span>
+    <span class="dbrand"><img src="assets/brand/proton-wordmark-navy.png" alt="Proton Sports" /></span>
     <button class="dclose" id="menuClose" aria-label="Close menu">&times;</button>
   </div>
   <nav>
@@ -597,11 +602,11 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <div class="partners-grid">
       <div class="ptile"><span class="ptype"><span class="pn">NFLPA</span></span></div>
-      <a class="ptile" href="https://protonsports.com" aria-label="Pickle Money Ball"><img src="assets/partners/picklemoneyball-blu.png" alt="Pickle Money Ball" /></a>
+      <a class="ptile plogo-pmb" href="https://protonsports.com" aria-label="Pickle Money Ball"><img src="assets/partners/picklemoneyball-blu.png" alt="Pickle Money Ball" /></a>
       <div class="ptile"><span class="ptype"><span class="pn">Paddle Battles</span></span></div>
       <div class="ptile"><span class="ptype"><span class="pn">Elite Pickleball</span></span></div>
       <div class="ptile"><span class="ptype"><span class="pn">PPA Tour</span></span></div>
-      <div class="ptile"><img src="assets/partners/mlp-white.png" alt="Major League Pickleball" /></div>
+      <div class="ptile plogo-mlp"><img src="assets/partners/mlp-white.png" alt="Major League Pickleball" /></div>
       <div class="ptile"><span class="ptype"><span class="pn">Proton National Tour</span></span></div>
       <div class="ptile"><span class="ptype"><span class="pn">Hunter Games</span></span></div>
     </div>

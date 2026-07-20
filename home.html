@@ -8,33 +8,40 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+<!-- Mulish loaded as the closest free Avenir Next analogue for non-Apple devices; Apple devices render true Avenir Next -->
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
-/* ============ Shared design system (from index.html / PDP) ============ */
+/* ============ Shared design system — Proton navy + baby blue ============ */
 :root{
   --ink:    #FFFFFF;
-  --ink-1:  #F6F7F9;
-  --ink-2:  #EEF0F4;
-  --ink-3:  #E6E9ED;
+  --ink-1:  #F5F7FA;
+  --ink-2:  #EBEFF4;
+  --ink-3:  #E1E7EE;
 
-  --bone:   #0B0C10;
-  --bone-2: #3B3E46;
-  --bone-3: #6A6D77;
-  --bone-4: #9B9EA7;
+  /* navy replaces black everywhere (sampled from Proton wordmark #002855) */
+  --navy:      #002855;
+  --navy-deep: #001B3D;
+  --bone:   #002855;   /* text + dark bands + promo now read navy, not black */
+  --bone-2: #33435C;
+  --bone-3: #5E6B80;
+  --bone-4: #93A0B2;
 
-  --cy:     #0E97A8;
-  --teal:   #12A99A;
-  --peacock: linear-gradient(96deg,#2CE5C7 0%,#3FC8E6 24%,#3E7BF0 52%,#7B4BEC 78%,#C457DD 100%);
-  --peacock-ink: linear-gradient(96deg,#12A99A 0%,#1E9AD8 30%,#2F6FE0 56%,#6B45E4 80%,#9A3FD0 100%);
+  /* atom blue (sampled from Proton atom #0082C9) + baby blue */
+  --cy:     #0082C9;
+  --teal:   #4AA3DA;
+  --baby:   #7FC1EA;
 
-  --hair:   rgba(11,12,16,0.10);
-  --hair-2: rgba(14,151,168,0.32);
-  --hair-3: rgba(11,12,16,0.18);
+  /* two-tone brand gradients: navy → baby blue */
+  --peacock:     linear-gradient(96deg,#002855 0%,#0060A8 42%,#0082C9 68%,#7FC1EA 100%);
+  --peacock-ink: linear-gradient(96deg,#002855 0%,#0060A8 55%,#0082C9 100%); /* stays readable as text on white */
 
-  --ff-display: 'Clash Display', system-ui, sans-serif;
-  --ff-body: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --hair:   rgba(0,40,85,0.10);
+  --hair-2: rgba(0,130,201,0.30);
+  --hair-3: rgba(0,40,85,0.18);
+
+  --ff-display: 'Avenir Next','Avenir','Mulish',system-ui,-apple-system,sans-serif;
+  --ff-body:    'Avenir Next','Avenir','Mulish',system-ui,-apple-system,sans-serif;
 
   --pad: clamp(20px, 5vw, 72px);
   --maxw: 1240px;
@@ -52,11 +59,12 @@ a{ color:inherit; text-decoration:none; }
 button{ font-family:inherit; cursor:pointer; }
 .wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:var(--pad); }
 
-.display{ font-family:var(--ff-display); font-weight:500; line-height:1.0; letter-spacing:-0.02em; }
+/* Avenir Next Demi Bold (600) for display; wider than Clash so line-heights tightened */
+.display{ font-family:var(--ff-display); font-weight:600; line-height:1.02; letter-spacing:-0.02em; }
 .grad{ background:var(--peacock-ink); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .kicker{
-  font-family:var(--ff-body); font-weight:600; font-size:13px;
-  letter-spacing:0.14em; text-transform:uppercase; color:var(--cy);
+  font-family:var(--ff-body); font-weight:700; font-size:13px;
+  letter-spacing:0.02em; color:var(--cy);
   display:inline-flex; align-items:center; gap:12px;
 }
 .kicker::before{ content:""; width:26px; height:2px; border-radius:2px; background:var(--peacock); }
@@ -64,9 +72,9 @@ button{ font-family:inherit; cursor:pointer; }
 
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  font-family:var(--ff-display); font-weight:600; font-size:15.5px; letter-spacing:0.01em;
-  height:56px; padding:0 30px; border:0; border-radius:3px; color:#06070A;
-  background:var(--peacock); position:relative; overflow:hidden;
+  font-family:var(--ff-display); font-weight:700; font-size:15.5px; letter-spacing:0.01em;
+  height:56px; padding:0 30px; border:0; border-radius:4px; color:#fff;
+  background:var(--peacock-ink); position:relative; overflow:hidden;
   transition:transform .25s cubic-bezier(.19,1,.22,1), filter .25s;
 }
 .btn:hover{ filter:brightness(1.08); transform:translateY(-1px); }
@@ -83,9 +91,9 @@ section{ padding-block:clamp(58px,7vw,104px); }
 .center{ text-align:center; }
 
 .sec-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-.sec-head h2{ font-family:var(--ff-display); font-weight:500; font-size:clamp(30px,3.8vw,50px); letter-spacing:-0.025em; margin:14px 0 0; line-height:1.03; }
+.sec-head h2{ font-family:var(--ff-display); font-weight:600; font-size:clamp(29px,3.6vw,46px); letter-spacing:-0.025em; margin:14px 0 0; line-height:1.05; }
 .sec-head .helper{ color:var(--bone-3); font-size:clamp(15px,1.3vw,17px); max-width:520px; }
-.sec-head .seelink{ color:var(--cy); font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:7px; white-space:nowrap; }
+.sec-head .seelink{ color:var(--cy); font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:7px; white-space:nowrap; }
 .sec-head .seelink .arr{ transition:transform .3s cubic-bezier(.19,1,.22,1); }
 .sec-head .seelink:hover .arr{ transform:translateX(4px); }
 
@@ -93,35 +101,40 @@ section{ padding-block:clamp(58px,7vw,104px); }
 .brandmark-wrap > .wrap{ position:relative; z-index:1; }
 .brandmark-bg{ position:absolute; top:50%; right:-3%; transform:translateY(-50%); width:min(560px,52vw); opacity:0.06; pointer-events:none; user-select:none; z-index:0; }
 
-/* ============ Promo / announcement bar (wireframe: Banners / Running Ad) ============ */
+/* ============ Promo / announcement bar ============ */
 .promo{
-  background:var(--bone); color:#fff; text-align:center;
-  font-size:12.5px; letter-spacing:0.05em; font-weight:500;
+  background:var(--navy); color:#fff; text-align:center;
+  font-size:12.5px; letter-spacing:0.04em; font-weight:600;
   height:38px; display:grid; place-items:center; position:relative; z-index:70; overflow:hidden;
 }
-.promo .msg{ position:absolute; inset:0; display:grid; place-items:center; opacity:0; transition:opacity .6s; padding:0 40px; }
+.promo .msg{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:5px; white-space:nowrap; opacity:0; transition:opacity .6s; padding:0 40px; }
 .promo .msg.on{ opacity:1; }
-.promo .msg .p{ color:var(--cy); font-weight:700; margin-right:8px; }
-.promo b{ font-weight:700; }
+.promo .msg .p{ color:var(--baby); font-weight:800; margin-right:8px; }
+.promo b{ font-weight:800; }
 
-/* ============ Nav (search-forward: menu · search · account/cart) ============ */
+/* ============ Nav — brand wordmark · search · account/cart ============ */
 .nav{
-  position:sticky; top:0; z-index:60; height:64px;
-  display:flex; align-items:center; gap:20px;
-  padding-inline:var(--pad);
-  background:rgba(255,255,255,0.88); backdrop-filter:blur(16px);
+  position:sticky; top:0; z-index:60; min-height:66px;
+  display:flex; align-items:center; gap:18px;
+  padding-block:8px; padding-inline:var(--pad);
+  background:rgba(255,255,255,0.90); backdrop-filter:blur(16px);
   border-bottom:1px solid var(--hair);
 }
 .hamb{
   display:inline-flex; align-items:center; gap:11px; background:none; border:0; padding:6px 4px;
-  color:var(--bone); font-family:var(--ff-body); font-weight:600; font-size:14px; letter-spacing:0.02em;
+  color:var(--bone); font-family:var(--ff-body); font-weight:700; font-size:14px; letter-spacing:0.01em;
 }
 .hamb .bars{ display:inline-flex; flex-direction:column; gap:4px; }
 .hamb .bars i{ width:22px; height:2px; background:var(--bone); border-radius:2px; display:block; }
-.hamb .lbl{ }
 @media(max-width:560px){ .hamb .lbl{ display:none; } }
 
-.search{ flex:1; max-width:560px; margin:0 auto; position:relative; }
+.nav-brand{ display:inline-flex; align-items:center; gap:12px; flex:0 0 auto; }
+.nav-brand img{ height:26px; width:auto; }
+.nav-brand .tag{ padding-left:13px; border-left:1px solid var(--hair); font-size:12px; letter-spacing:0.02em; color:var(--bone-3); font-weight:600; }
+@media(max-width:940px){ .nav-brand .tag{ display:none; } }
+@media(max-width:600px){ .nav-brand img{ height:22px; } }
+
+.search{ flex:1; max-width:440px; margin-left:auto; position:relative; }
 .search input{
   width:100%; height:42px; border:1px solid var(--hair-3); border-radius:999px;
   background:var(--ink-1); padding:0 18px 0 44px; font-family:var(--ff-body); font-size:14.5px; color:var(--bone);
@@ -130,86 +143,95 @@ section{ padding-block:clamp(58px,7vw,104px); }
 .search input::placeholder{ color:var(--bone-4); }
 .search input:focus{ border-color:var(--cy); background:#fff; }
 .search .si{ position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--bone-4); }
-.nav-right{ display:flex; align-items:center; gap:20px; font-size:13.5px; color:var(--bone-3); font-weight:500; }
+@media(max-width:760px){ .search{ max-width:none; } }
+.nav-right{ display:flex; align-items:center; gap:20px; font-size:13.5px; color:var(--bone-3); font-weight:600; flex:0 0 auto; }
 .nav-right a:hover{ color:var(--bone); }
-.nav-right .cart{ color:var(--cy); font-weight:600; }
+.nav-right .cart{ color:var(--cy); font-weight:700; }
 @media(max-width:760px){ .nav-right .acct{ display:none; } }
+@media(max-width:640px){ .search{ display:none; } }
 
 /* ============ Slide-over menu ============ */
-.scrim-menu{ position:fixed; inset:0; background:rgba(11,12,16,0.42); opacity:0; visibility:hidden; transition:.35s; z-index:90; }
+.scrim-menu{ position:fixed; inset:0; background:rgba(0,20,45,0.50); opacity:0; visibility:hidden; transition:.35s; z-index:90; }
 .scrim-menu.open{ opacity:1; visibility:visible; }
 .drawer{
-  position:fixed; top:0; left:0; bottom:0; width:min(360px,86vw); z-index:100;
+  position:fixed; top:0; left:0; bottom:0; width:min(370px,88vw); z-index:100;
   background:#fff; transform:translateX(-100%); transition:transform .4s cubic-bezier(.19,1,.22,1);
-  padding:26px 28px; display:flex; flex-direction:column; box-shadow:0 0 60px rgba(0,0,0,0.18);
+  padding:24px 26px; display:flex; flex-direction:column; box-shadow:0 0 60px rgba(0,20,45,0.18);
+  overflow-y:auto;
 }
 .drawer.open{ transform:translateX(0); }
-.drawer .dhead{ display:flex; align-items:center; justify-content:space-between; margin-bottom:26px; }
-.drawer .dhead .dbrand{ display:flex; align-items:center; gap:10px; font-family:var(--ff-display); font-weight:600; font-size:18px; letter-spacing:0.02em; }
-.drawer .dhead .dbrand img{ height:26px; }
+.drawer .dhead{ display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+.drawer .dhead .dbrand img{ height:24px; width:auto; }
 .drawer .dclose{ background:none; border:0; font-size:26px; line-height:1; color:var(--bone-3); }
-.drawer nav a{ display:block; font-family:var(--ff-display); font-weight:500; font-size:22px; letter-spacing:-0.01em; padding:14px 0; border-bottom:1px solid var(--hair); color:var(--bone); }
-.drawer nav a:hover{ color:var(--cy); }
-.drawer nav a .sub{ display:block; font-family:var(--ff-body); font-weight:400; font-size:12.5px; color:var(--bone-3); letter-spacing:0; margin-top:2px; }
-.drawer .dfoot{ margin-top:auto; padding-top:22px; font-size:12.5px; color:var(--bone-3); }
+
+.drawer nav > a{ display:block; font-family:var(--ff-display); font-weight:600; font-size:21px; letter-spacing:-0.01em; padding:14px 0; border-bottom:1px solid var(--hair); color:var(--bone); }
+.drawer nav > a:hover{ color:var(--cy); }
+.drawer nav > a .sub{ display:block; font-family:var(--ff-body); font-weight:400; font-size:12.5px; color:var(--bone-3); letter-spacing:0; margin-top:2px; }
+
+.drawer nav details{ border-bottom:1px solid var(--hair); }
+.drawer nav summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--ff-display); font-weight:600; font-size:21px; letter-spacing:-0.01em; padding:14px 0; color:var(--bone); }
+.drawer nav summary::-webkit-details-marker{ display:none; }
+.drawer nav summary .chev{ color:var(--bone-4); font-size:14px; transition:transform .3s; }
+.drawer nav details[open] summary .chev{ transform:rotate(180deg); }
+.dsub{ padding:0 0 14px; }
+.dshape{ margin-bottom:8px; }
+.dshape .sh{ font-family:var(--ff-body); font-weight:700; font-size:13px; color:var(--cy); margin:6px 0 2px; }
+.dsub a{ display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+  font-family:var(--ff-body); font-weight:600; font-size:15px; color:var(--bone-2); padding:8px 0 8px 2px; }
+.dsub a:hover{ color:var(--cy); }
+.dsub a .th{ color:var(--bone-4); font-weight:500; font-size:12.5px; white-space:nowrap; }
+.drawer .dfoot{ margin-top:auto; padding-top:22px; font-size:12.5px; color:var(--bone-3); line-height:1.55; }
 .drawer .dfoot a{ color:var(--cy); }
 
-/* ============ Brand header band (wireframe: HEADER) ============ */
-.brandband{ border-bottom:1px solid var(--hair); background:#fff; }
-.brandband .bb{ height:74px; display:flex; align-items:center; justify-content:center; gap:13px; }
-.brandband .bb img{ height:34px; }
-.brandband .bb .wm{ font-family:var(--ff-display); font-weight:600; font-size:26px; letter-spacing:0.04em; }
-.brandband .bb .tag{ margin-left:14px; padding-left:16px; border-left:1px solid var(--hair); font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--bone-3); font-weight:600; }
-@media(max-width:640px){ .brandband .bb .tag{ display:none; } }
-
-/* ============ Video hero (wireframe: Video or Carousel) ============ */
-.vhero{ position:relative; height:clamp(480px,72vh,780px); overflow:hidden; background:#06070A; }
+/* ============ Video hero ============ */
+.vhero{ position:relative; height:clamp(480px,72vh,780px); overflow:hidden; background:var(--navy-deep); }
 .vhero video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .vhero .scrim{ position:absolute; inset:0; background:
-  linear-gradient(180deg, rgba(6,7,10,0.46) 0%, rgba(6,7,10,0.10) 26%, rgba(6,7,10,0.40) 56%, rgba(6,7,10,0.90) 100%); }
+  linear-gradient(180deg, rgba(0,17,40,0.46) 0%, rgba(0,17,40,0.10) 26%, rgba(0,17,40,0.42) 56%, rgba(0,17,40,0.90) 100%); }
 .vhero .vinner{ position:relative; z-index:3; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:clamp(40px,6vw,74px); }
-.vhero .kicker{ color:#7FE8DD; }
+.vhero .kicker{ color:var(--baby); }
 .vhero .kicker::before{ background:var(--peacock); }
 .vhero h1{
-  font-family:var(--ff-display); font-weight:500; color:#fff;
-  font-size:clamp(40px,6vw,82px); line-height:0.98; letter-spacing:-0.03em; margin:18px 0 18px; max-width:15ch;
+  font-family:var(--ff-display); font-weight:600; color:#fff;
+  font-size:clamp(38px,5.6vw,74px); line-height:1.0; letter-spacing:-0.03em; margin:18px 0 18px; max-width:16ch;
 }
-.vhero h1 .grad{ background:var(--peacock); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.vhero h1 .grad{ background:linear-gradient(96deg,#39A7E1 0%,#9AD3F4 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .vhero .lede{ color:rgba(255,255,255,0.90); max-width:600px; }
 .vhero .hero-ctas{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
 .vhero .vsound{
   position:absolute; z-index:4; right:calc(var(--pad)); top:22px;
   width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,0.4);
-  background:rgba(6,7,10,0.35); color:#fff; display:grid; place-items:center; font-size:15px;
+  background:rgba(0,20,45,0.35); color:#fff; display:grid; place-items:center; font-size:15px;
 }
-.vhero .vsound:hover{ background:rgba(6,7,10,0.6); }
+.vhero .vsound:hover{ background:rgba(0,20,45,0.6); }
 
 /* ============ Trust strip ============ */
 .trust{ background:#fff; border-bottom:1px solid var(--hair); }
 .trust .tt{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,4vw,54px); flex-wrap:wrap; padding:16px 0; }
-.trust .ti{ font-size:12.5px; font-weight:600; letter-spacing:0.10em; text-transform:uppercase; color:var(--bone-2); display:inline-flex; align-items:center; gap:9px; }
+.trust .ti{ font-size:13px; font-weight:700; letter-spacing:0.01em; color:var(--bone-2); display:inline-flex; align-items:center; gap:9px; }
 .trust .ti .d{ color:var(--cy); }
 
-/* ============ Category tiles (Pickleball / Softball / Apparel) ============ */
+/* ============ Category tiles ============ */
 .cats{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,22px); margin-top:clamp(30px,3.4vw,48px); }
 .cat{
   position:relative; display:block; aspect-ratio:3/4; border-radius:12px; overflow:hidden;
   border:1px solid var(--hair); background:var(--ink-2); isolation:isolate;
 }
 .cat .cmedia{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.19,1,.22,1); }
-.cat.product{ background:linear-gradient(160deg,#F3F5F8 0%,#E7EBF0 100%); }
+.cat.product{ background:linear-gradient(160deg,#EEF3F8 0%,#DFE7F0 100%); }
 .cat.product .cmedia{ object-fit:contain; padding:clamp(16px,2.2vw,28px) clamp(8px,1.2vw,16px) 27%; }
-.cat .cgrad{ position:absolute; inset:0; background:linear-gradient(to top, rgba(6,7,10,0.82) 0%, rgba(6,7,10,0.30) 38%, rgba(6,7,10,0) 66%); z-index:1; }
-.cat.product .cgrad{ background:linear-gradient(to top, rgba(6,7,10,0.72) 0%, rgba(6,7,10,0.10) 40%, rgba(6,7,10,0) 62%); }
+.cat .cgrad{ position:absolute; inset:0; background:linear-gradient(to top, rgba(0,20,45,0.84) 0%, rgba(0,20,45,0.30) 38%, rgba(0,20,45,0) 66%); z-index:1; }
+.cat.product .cgrad{ background:linear-gradient(to top, rgba(0,20,45,0.74) 0%, rgba(0,20,45,0.10) 40%, rgba(0,20,45,0) 62%); }
 .cat .cbody{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding:clamp(20px,2.4vw,30px); color:#fff; }
-.cat .clabel{ font-family:var(--ff-display); font-weight:500; font-size:clamp(23px,2.4vw,30px); letter-spacing:-0.015em; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.cat .clabel{ font-family:var(--ff-display); font-weight:600; font-size:clamp(22px,2.3vw,29px); letter-spacing:-0.015em; display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .cat .clabel .arr{ transition:transform .3s cubic-bezier(.19,1,.22,1); }
 .cat .csub{ font-size:13px; color:rgba(255,255,255,0.82); margin-top:3px; }
 .cat .chips{
   display:flex; flex-wrap:wrap; gap:8px; margin-top:0; max-height:0; opacity:0; overflow:hidden;
   transition:max-height .4s cubic-bezier(.19,1,.22,1), opacity .3s, margin-top .4s;
 }
-.cat .chips span{ font-size:12px; font-weight:600; letter-spacing:0.02em; color:#fff; border:1px solid rgba(255,255,255,0.5); border-radius:999px; padding:6px 12px; background:rgba(255,255,255,0.10); backdrop-filter:blur(4px); }
+.cat .chips span{ font-size:12px; font-weight:600; letter-spacing:0.01em; color:#fff; border:1px solid rgba(255,255,255,0.5); border-radius:999px; padding:6px 12px; background:rgba(255,255,255,0.10); backdrop-filter:blur(4px); }
 .cat:hover .cmedia{ transform:scale(1.05); }
 .cat:hover .chips, .cat:focus-within .chips{ max-height:60px; opacity:1; margin-top:14px; }
 .cat:hover .clabel .arr{ transform:translateX(5px); }
@@ -226,16 +248,16 @@ section{ padding-block:clamp(58px,7vw,104px); }
 a.pcard:hover{ border-color:var(--cy); transform:translateY(-3px); }
 .pcard .pic{ --picpad:clamp(18px,2.4vw,30px); position:relative; aspect-ratio:1/1; background:#fff; border-bottom:1px solid var(--hair); }
 .pcard .pic img{ position:absolute; inset:var(--picpad); width:calc(100% - 2*var(--picpad)); height:calc(100% - 2*var(--picpad)); object-fit:contain; }
-.pcard .pill{ position:absolute; top:14px; left:14px; font-size:10.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#06070A; background:var(--peacock); border-radius:999px; padding:5px 11px; z-index:2; }
+.pcard .pill{ position:absolute; top:14px; left:14px; font-size:10.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#fff; background:var(--cy); border-radius:999px; padding:5px 11px; z-index:2; }
 .pcard .cbody{ padding:clamp(18px,2vw,24px); display:flex; flex-direction:column; flex:1; }
-.pcard .series{ font-size:11px; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--bone-3); }
-.pcard h3{ font-family:var(--ff-display); font-weight:500; font-size:21px; letter-spacing:-0.015em; margin:7px 0 4px; }
-.pcard .core{ font-family:var(--ff-display); font-weight:600; font-size:15px; letter-spacing:-0.005em; margin-bottom:11px; }
+.pcard .series{ font-size:11px; font-weight:700; letter-spacing:0.06em; color:var(--bone-3); }
+.pcard h3{ font-family:var(--ff-display); font-weight:600; font-size:20px; letter-spacing:-0.015em; margin:7px 0 4px; }
+.pcard .core{ font-family:var(--ff-display); font-weight:700; font-size:15px; letter-spacing:-0.005em; margin-bottom:11px; }
 .pcard .desc{ font-size:13.5px; line-height:1.55; color:var(--bone-2); margin:0 0 18px; }
 .pcard .meta{ margin-top:auto; padding-top:14px; border-top:1px solid var(--hair); display:flex; justify-content:space-between; align-items:center; gap:12px; }
-.pcard .price{ font-family:var(--ff-display); font-weight:600; font-size:16px; }
-.pcard .price .fr{ font-family:var(--ff-body); font-weight:500; font-size:11px; color:var(--bone-3); letter-spacing:0.06em; text-transform:uppercase; margin-right:5px; }
-.pcard .go{ color:var(--cy); font-weight:600; font-size:13.5px; display:inline-flex; align-items:center; gap:6px; }
+.pcard .price{ font-family:var(--ff-display); font-weight:700; font-size:16px; }
+.pcard .price .fr{ font-family:var(--ff-body); font-weight:600; font-size:11px; color:var(--bone-3); letter-spacing:0.03em; text-transform:uppercase; margin-right:5px; }
+.pcard .go{ color:var(--cy); font-weight:700; font-size:13.5px; display:inline-flex; align-items:center; gap:6px; }
 .pcard .go .arr{ transition:transform .3s cubic-bezier(.19,1,.22,1); }
 a.pcard:hover .go .arr{ transform:translateX(4px); }
 
@@ -249,58 +271,54 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 .ig-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(8px,1vw,14px); margin-top:clamp(26px,3vw,40px); }
 .ig-t{ position:relative; aspect-ratio:1/1; border-radius:8px; overflow:hidden; background:var(--ink-2); display:block; }
 .ig-t img{ width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.19,1,.22,1); }
-.ig-t.cut{ background:linear-gradient(165deg,#EAF7F6,#DDE7F2); }
+.ig-t.cut{ background:linear-gradient(165deg,#E8F3FB,#DCE7F4); }
 .ig-t.cut img{ object-fit:contain; padding:10px 10px 0; }
 .ig-t.prod{ background:#fff; }
 .ig-t.prod img{ object-fit:contain; padding:18px; }
-.ig-t .ov{ position:absolute; inset:0; background:rgba(6,7,10,0.30); opacity:0; transition:.3s; display:grid; place-items:center; color:#fff; font-size:22px; }
+.ig-t .ov{ position:absolute; inset:0; background:rgba(0,20,45,0.32); opacity:0; transition:.3s; display:grid; place-items:center; color:#fff; font-size:22px; }
 .ig-t:hover img{ transform:scale(1.06); }
 .ig-t:hover .ov{ opacity:1; }
 .ig-note{ text-align:center; margin-top:clamp(24px,3vw,36px); font-size:13.5px; color:var(--bone-3); }
-.ig-note b{ color:var(--bone-2); font-weight:600; }
+.ig-note b{ color:var(--bone-2); font-weight:700; }
 @media(max-width:820px){ .ig-grid{ grid-template-columns:repeat(2,1fr); } }
 
-/* ============ Sponsorships — Official Paddle of MLP (dark band) ============ */
-.band-dark{ background:#0B0C10; color:#fff; }
-.band-dark .brandmark-bg{ opacity:0.05; filter:invert(1); }
-.band-dark .kicker{ color:#7FE8DD; }
-.spon-head{ max-width:820px; }
-.spon-head h2{ font-family:var(--ff-display); font-weight:500; font-size:clamp(34px,5vw,64px); line-height:1.02; letter-spacing:-0.03em; margin:16px 0 20px; color:#fff; }
-.spon-head h2 .grad{ background:var(--peacock); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.spon-head p{ font-size:clamp(16px,1.5vw,19px); line-height:1.6; color:rgba(255,255,255,0.78); max-width:640px; }
-.spon-row{ display:grid; grid-template-columns:300px 1fr; gap:clamp(30px,5vw,64px); align-items:center; margin-top:clamp(40px,5vw,60px); }
-/* MLP logo slot — placeholder art to be swapped for official MLP logo */
-.mlp-slot{
-  aspect-ratio:1/1; border-radius:16px; border:1px solid rgba(255,255,255,0.16);
-  background:radial-gradient(120% 120% at 50% 0%, rgba(46,229,199,0.10), rgba(11,12,16,0) 60%), #0F1116;
-  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:28px;
-}
-.mlp-slot .mlp-mark{ font-family:var(--ff-display); font-weight:700; font-size:clamp(46px,7vw,72px); letter-spacing:-0.02em; line-height:1; }
-.mlp-slot .mlp-mark .p{ background:var(--peacock); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.mlp-slot .mlp-sub{ margin-top:12px; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.42); }
-.mlp-slot .mlp-flag{ margin-top:18px; font-size:10.5px; letter-spacing:0.06em; color:rgba(255,255,255,0.34); border-top:1px dashed rgba(255,255,255,0.16); padding-top:12px; }
-.roster h3{ font-family:var(--ff-body); font-weight:600; font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase; color:#7FE8DD; margin:0 0 18px; }
-.roster-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.6vw,18px); }
-.rp{ }
-.rp .rpi{ aspect-ratio:1/1; border-radius:10px; overflow:hidden; background:#15171D; border:1px solid rgba(255,255,255,0.08); }
+/* ============ Our Pros — athlete roster (light) ============ */
+.pros{ background:var(--ink-1); }
+.roster-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,1.8vw,22px); margin-top:clamp(30px,3.4vw,46px); }
+.rp .rpi{ aspect-ratio:1/1; border-radius:12px; overflow:hidden; background:var(--ink-2); border:1px solid var(--hair); }
 .rp .rpi img{ width:100%; height:100%; object-fit:cover; }
-.rp .rpn{ margin-top:10px; font-family:var(--ff-display); font-weight:500; font-size:14.5px; letter-spacing:-0.01em; }
-.rp .rpr{ font-size:11.5px; color:rgba(255,255,255,0.5); margin-top:1px; }
-.spon-back{ margin-top:clamp(36px,4vw,52px); display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:rgba(255,255,255,0.6); }
-.spon-back .chip{ font-size:12px; font-weight:600; letter-spacing:0.02em; color:#fff; border:1px solid rgba(255,255,255,0.22); border-radius:999px; padding:7px 14px; }
-@media(max-width:860px){ .spon-row{ grid-template-columns:1fr; } .mlp-slot{ max-width:280px; margin-inline:auto; } .roster-grid{ grid-template-columns:repeat(4,1fr); } }
+.rp .rpn{ margin-top:11px; font-family:var(--ff-display); font-weight:600; font-size:15.5px; letter-spacing:-0.01em; color:var(--bone); }
+.rp .rpr{ font-size:12px; color:var(--cy); font-weight:600; margin-top:2px; }
 @media(max-width:520px){ .roster-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ============ Our Partners — logo grid (navy band) ============ */
+.band-dark{ background:var(--navy); color:#fff; }
+.band-dark .brandmark-bg{ opacity:0.06; }
+.band-dark .kicker{ color:var(--baby); }
+.partners-head{ max-width:720px; }
+.partners-head h2{ font-family:var(--ff-display); font-weight:600; font-size:clamp(30px,4.4vw,54px); line-height:1.03; letter-spacing:-0.03em; margin:16px 0 16px; color:#fff; }
+.partners-head p{ font-size:clamp(15px,1.5vw,18px); line-height:1.6; color:rgba(255,255,255,0.78); max-width:600px; }
+.partners-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.4vw,18px); margin-top:clamp(38px,4.4vw,56px); }
+.ptile{ display:flex; align-items:center; justify-content:center; height:120px; padding:24px;
+  border:1px solid rgba(255,255,255,0.12); border-radius:14px; background:rgba(255,255,255,0.035); transition:.25s; }
+.ptile:hover{ background:rgba(255,255,255,0.07); border-color:rgba(127,193,234,0.45); }
+.ptile img{ max-height:62px; max-width:82%; width:auto; object-fit:contain; opacity:.82; transition:opacity .25s; }
+.ptile:hover img{ opacity:1; }
+.ptype{ text-align:center; }
+.ptype .pn{ display:block; font-family:var(--ff-display); font-weight:600; font-size:clamp(16px,1.5vw,19px); letter-spacing:-0.01em; color:#fff; opacity:.82; transition:opacity .25s; line-height:1.12; }
+.ptile:hover .ptype .pn{ opacity:1; }
+@media(max-width:820px){ .partners-grid{ grid-template-columns:repeat(2,1fr); } }
 
 /* ============ Footer ============ */
 footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:clamp(46px,6vw,68px) 0 40px; color:var(--bone-3); }
-.foot-logo{ height:44px; width:auto; display:block; margin-bottom:16px; }
+.foot-logo{ height:30px; width:auto; display:block; margin-bottom:18px; }
 .fgrid{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:36px; margin-bottom:40px; }
-.fgrid .lead{ font-family:var(--ff-display); font-weight:500; font-size:21px; color:var(--bone); letter-spacing:-0.02em; margin-bottom:10px; }
+.fgrid .lead{ font-family:var(--ff-display); font-weight:600; font-size:20px; color:var(--bone); letter-spacing:-0.02em; margin-bottom:10px; }
 .fgrid .blurb{ font-size:13.5px; max-width:340px; line-height:1.6; }
-.fcol .h{ font-size:12.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--cy); margin-bottom:14px; }
+.fcol .h{ font-size:12.5px; font-weight:700; letter-spacing:0.04em; color:var(--cy); margin-bottom:14px; }
 .fcol a{ display:block; font-size:13.5px; margin-bottom:8px; color:var(--bone-3); }
 .fcol a:hover{ color:var(--bone); }
-.fbar{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12px; letter-spacing:0.03em; color:var(--bone-4); padding-top:22px; border-top:1px solid var(--hair); }
+.fbar{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12px; letter-spacing:0.02em; color:var(--bone-4); padding-top:22px; border-top:1px solid var(--hair); }
 @media(max-width:820px){ .fgrid{ grid-template-columns:1fr 1fr; } }
 
 /* Sticky mobile CTA */
@@ -324,6 +342,10 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <button class="hamb" id="menuBtn" aria-label="Open menu" aria-expanded="false">
     <span class="bars"><i></i><i></i><i></i></span><span class="lbl">Menu</span>
   </button>
+  <a class="nav-brand" href="#top" aria-label="Proton Sports home">
+    <img src="assets/brand/proton-wordmark.png" alt="Proton Sports" />
+    <span class="tag">Pickleball · Softball · Apparel</span>
+  </a>
   <form class="search" role="search" onsubmit="return false;">
     <span class="si" aria-hidden="true">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -340,29 +362,33 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 <div class="scrim-menu" id="menuScrim"></div>
 <aside class="drawer" id="drawer" aria-label="Site menu">
   <div class="dhead">
-    <span class="dbrand"><img src="assets/brand/proton-atom.png" alt="" /> PROTON</span>
+    <span class="dbrand"><img src="assets/brand/proton-wordmark.png" alt="Proton Sports" /></span>
     <button class="dclose" id="menuClose" aria-label="Close menu">&times;</button>
   </div>
   <nav>
-    <a href="#categories">Pickleball <span class="sub">Peacock · Flamingo · Roadrunner</span></a>
-    <a href="#categories">Softball <span class="sub">Series Three composite bats</span></a>
-    <a href="#categories">Apparel &amp; Gear <span class="sub">Tees · hats · backpacks</span></a>
+    <details>
+      <summary>Pickleball <span class="chev">▾</span></summary>
+      <div class="dsub">
+        <div class="dshape">
+          <div class="sh">Standard shape · Wide-Body</div>
+          <a href="index.html">Project Peacock <span class="th">13mm · 15mm</span></a>
+          <a href="flamingo/">Project Flamingo <span class="th">13mm · 15mm</span></a>
+        </div>
+        <div class="dshape">
+          <div class="sh">Elongated</div>
+          <a href="roadrunner/">Project Roadrunner <span class="th">16.5&Prime; · 15mm</span></a>
+        </div>
+      </div>
+    </details>
+    <a href="https://protonsports.com/collections/frontpage">Softball <span class="sub">Series Three composite bats</span></a>
+    <a href="https://protonsports.com/collections/apparel">Apparel &amp; Gear <span class="sub">Tees · hats · backpacks</span></a>
     <a href="#whatsnew">What's New</a>
-    <a href="#sponsorships">protonPROS</a>
     <a href="https://protonsports.com/pages/warranty-information">Warranty</a>
     <a href="https://protonsports.com/pages/contact">Contact</a>
   </nav>
   <div class="dfoot">Aerospace-grade carbon fiber · UPA + USA Pickleball certified.<br><a href="https://protonsports.com">protonsports.com</a></div>
 </aside>
 
-<!-- ============ BRAND HEADER BAND ============ -->
-<div class="brandband">
-  <a class="bb" href="#top" aria-label="Proton Sports home">
-    <img src="assets/brand/proton-atom.png" alt="Proton Sports" />
-    <span class="wm">proton</span>
-    <span class="tag">Pickleball · Softball · Apparel</span>
-  </a>
-</div>
 <div id="top"></div>
 
 <!-- ============ VIDEO HERO ============ -->
@@ -374,11 +400,11 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <button class="vsound" id="soundBtn" aria-label="Toggle sound" title="Toggle sound">🔇</button>
   <div class="wrap vinner">
     <span class="kicker">Proton Sports</span>
-    <h1>Engineered like <span class="grad">aerospace.</span><br>Played on tour.</h1>
+    <h1>Engineered like <span class="grad">aerospace.</span><br>Played on&nbsp;tour.</h1>
     <p class="lede">Aerospace-grade carbon fiber paddles and pro-grade softball gear — the official paddle of Major League Pickleball, in the hands of the players who compete.</p>
     <div class="hero-ctas">
-      <a class="btn" href="#categories">Shop the lineup <span class="arr">→</span></a>
-      <a class="btn btn-light" href="#sponsorships">Meet the team</a>
+      <a class="btn" href="#categories">Shop <span class="arr">→</span></a>
+      <a class="btn btn-light" href="#ourpros">Meet the pros</a>
     </div>
   </div>
 </header>
@@ -398,7 +424,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="sec-head">
       <div>
         <span class="kicker">Shop by sport</span>
-        <h2>Three ways to play Proton.</h2>
+        <h2>Three ways to play&nbsp;Proton.</h2>
       </div>
       <p class="helper">Same engineering obsession across the line — pick your court.</p>
     </div>
@@ -446,7 +472,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="sec-head">
       <div>
         <span class="kicker">What's new</span>
-        <h2>Fresh off the line.</h2>
+        <h2>Fresh off the&nbsp;line.</h2>
       </div>
       <a class="seelink" href="https://protonsports.com/collections/all">Shop all <span class="arr">→</span></a>
     </div>
@@ -535,39 +561,49 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   </div>
 </section>
 
-<!-- ============ SPONSORSHIPS — OFFICIAL PADDLE OF MLP ============ -->
-<section class="band-dark brandmark-wrap" id="sponsorships">
-  <img class="brandmark-bg" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" />
+<!-- ============ OUR PROS — athlete roster ============ -->
+<section class="pros" id="ourpros">
   <div class="wrap">
-    <div class="spon-head">
-      <span class="kicker">Sponsorships</span>
-      <h2>The Official Paddle of <span class="grad">Major League Pickleball.</span></h2>
-      <p>The same paddle you can buy is in the hands of the players who compete on the biggest stage in the sport — from championship courts to your local courts.</p>
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Our Pros</span>
+        <h2>The players who compete on&nbsp;Proton.</h2>
+      </div>
+      <p class="helper">The same paddle and bat you can buy — in the hands of the pros, from championship courts to your local courts.</p>
     </div>
 
-    <div class="spon-row">
-      <!-- MLP logo slot: swap for official MLP logo art before final -->
-      <div class="mlp-slot" aria-label="Official Paddle of MLP">
-        <div class="mlp-mark">ML<span class="p">P</span></div>
-        <div class="mlp-sub">Official Paddle</div>
-        <div class="mlp-flag">◦ official MLP logo art to drop in ◦</div>
-      </div>
+    <div class="roster-grid">
+      <div class="rp"><div class="rpi"><img src="assets/peacock/people/genie-bouchard.png" alt="Genie Bouchard"></div><div class="rpn">Genie Bouchard</div><div class="rpr">Pro · Pickleball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/peacock/people/jade-kawamoto.png" alt="Jade Kawamoto"></div><div class="rpn">Jade Kawamoto</div><div class="rpr">Pro · Pickleball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/peacock/people/pablo-tellez.png" alt="Pablo Téllez"></div><div class="rpn">Pablo Téllez</div><div class="rpr">Pro · Pickleball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/peacock/people/andre-mercado.png" alt="André Mercado"></div><div class="rpn">André Mercado</div><div class="rpr">Pro · Pickleball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/people/softball/louie-castro.png" alt="Louie Castro"></div><div class="rpn">Louie Castro</div><div class="rpr">Pro · Softball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/people/softball/stesha-brazil.png" alt="Stesha Brazil"></div><div class="rpn">Stesha Brazil</div><div class="rpr">Pro · Softball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/people/softball/blake-lewis.png" alt="Blake Lewis"></div><div class="rpn">Blake Lewis</div><div class="rpr">Pro · Softball</div></div>
+      <div class="rp"><div class="rpi"><img src="assets/people/softball/jay-escamilla.png" alt="Jay Escamilla"></div><div class="rpn">Jay Escamilla</div><div class="rpr">Pro · Softball</div></div>
+    </div>
+  </div>
+</section>
 
-      <div class="roster">
-        <h3>Team Proton — protonPROS</h3>
-        <div class="roster-grid">
-          <div class="rp"><div class="rpi"><img src="assets/peacock/people/genie-bouchard.png" alt="Genie Bouchard"></div><div class="rpn">Genie Bouchard</div><div class="rpr">Pro · Pickleball</div></div>
-          <div class="rp"><div class="rpi"><img src="assets/peacock/people/jade-kawamoto.png" alt="Jade Kawamoto"></div><div class="rpn">Jade Kawamoto</div><div class="rpr">Pro · Pickleball</div></div>
-          <div class="rp"><div class="rpi"><img src="assets/peacock/people/pablo-tellez.png" alt="Pablo Téllez"></div><div class="rpn">Pablo Téllez</div><div class="rpr">Pro · Pickleball</div></div>
-          <div class="rp"><div class="rpi"><img src="assets/peacock/people/andre-mercado.png" alt="André Mercado"></div><div class="rpn">André Mercado</div><div class="rpr">Pro · Pickleball</div></div>
-        </div>
-        <div class="spon-back">
-          <span>What we back:</span>
-          <span class="chip">Major League Pickleball</span>
-          <span class="chip">Team Proton athletes</span>
-          <span class="chip">Grassroots events</span>
-        </div>
-      </div>
+<!-- ============ OUR PARTNERS — logo grid (navy band) ============ -->
+<section class="band-dark brandmark-wrap" id="partners">
+  <img class="brandmark-bg" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="partners-head">
+      <span class="kicker">Our Partners</span>
+      <h2>Who we&nbsp;back.</h2>
+      <p>Official Paddle of Major League Pickleball — and a proud partner to the leagues, tours and teams growing the game.</p>
+    </div>
+
+    <div class="partners-grid">
+      <div class="ptile"><span class="ptype"><span class="pn">NFLPA</span></span></div>
+      <a class="ptile" href="https://protonsports.com" aria-label="Pickle Money Ball"><img src="assets/partners/picklemoneyball-blu.png" alt="Pickle Money Ball" /></a>
+      <div class="ptile"><span class="ptype"><span class="pn">Paddle Battles</span></span></div>
+      <div class="ptile"><span class="ptype"><span class="pn">Elite Pickleball</span></span></div>
+      <div class="ptile"><span class="ptype"><span class="pn">PPA Tour</span></span></div>
+      <div class="ptile"><img src="assets/partners/mlp-white.png" alt="Major League Pickleball" /></div>
+      <div class="ptile"><span class="ptype"><span class="pn">Proton National Tour</span></span></div>
+      <div class="ptile"><span class="ptype"><span class="pn">Hunter Games</span></span></div>
     </div>
   </div>
 </section>
@@ -577,13 +613,13 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <img class="foot-logo" src="assets/brand/proton-atom.png" alt="Proton Sports" />
+        <img class="foot-logo" src="assets/brand/proton-wordmark.png" alt="Proton Sports" />
         <div class="lead">Powered by Proton.</div>
         <div class="blurb">Proton Sports — premium pickleball paddles, softball bats and gear, designed in the United States. Aerospace-grade carbon fiber, certified by UPA + USA Pickleball.</div>
       </div>
-      <div class="fcol"><div class="h">Pickleball</div><a href="#whatsnew">Paddles</a><a href="https://protonsports.com/collections/pickle-ball-gear">Gear</a><a href="#sponsorships">protonPROS</a></div>
-      <div class="fcol"><div class="h">Softball</div><a href="https://protonsports.com/collections/frontpage">Bats</a><a href="https://protonsports.com/collections/softball-gear">Gear</a><a href="https://protonsports.com/pages/proton-pros-softball">protonPROS</a></div>
-      <div class="fcol"><div class="h">Company</div><a href="https://protonsports.com/pages/our-staff">Our Staff</a><a href="https://protonsports.com/pages/warranty-information">Warranty</a><a href="https://protonsports.com/pages/contact">Contact</a></div>
+      <div class="fcol"><div class="h">Pickleball</div><a href="#whatsnew">Paddles</a><a href="https://protonsports.com/collections/pickle-ball-gear">Gear</a><a href="#ourpros">Our Pros</a></div>
+      <div class="fcol"><div class="h">Softball</div><a href="https://protonsports.com/collections/frontpage">Bats</a><a href="https://protonsports.com/collections/softball-gear">Gear</a><a href="#ourpros">Our Pros</a></div>
+      <div class="fcol"><div class="h">Company</div><a href="#ourpros">Our Pros</a><a href="#partners">Our Partners</a><a href="https://protonsports.com/pages/contact">Contact</a></div>
       <div class="fcol"><div class="h">Policies</div><a href="https://protonsports.com/policies/refund-policy">Returns</a><a href="https://protonsports.com/policies/shipping-policy">Shipping</a><a href="https://protonsports.com/policies/privacy-policy">Privacy</a></div>
     </div>
     <div class="fbar">
@@ -594,7 +630,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 </footer>
 
 <!-- ============ STICKY MOBILE CTA ============ -->
-<div class="sticky-mobile"><a class="btn" href="#categories">Shop the lineup <span class="arr">→</span></a></div>
+<div class="sticky-mobile"><a class="btn" href="#categories">Shop <span class="arr">→</span></a></div>
 
 <script>
 (function(){

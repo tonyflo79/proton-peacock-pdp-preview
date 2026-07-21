@@ -3,7 +3,7 @@
   "repo": "~/code/proton-peacock-pdp-preview",
   "branch": "feat/light-mode",
   "read_first": "context/CURRENT_CONTEXT.md",
-  "one_line": "Light-mode conversion COMPLETE for all 3 PDPs. Roadrunner (5 plates) + Flamingo pink/blue (8 plates each, cream = light-pink placeholders) rebuilt via _imggen HTML->Chrome pipeline; navy wordmark + ring cert badges fixed on both pages; home.html National Tour partner logo wired. Committed on feat/light-mode; push pending Anthony's approval.",
+  "one_line": "Light-mode conversion COMPLETE for all 3 PDPs. Roadrunner (5 plates) + Flamingo pink/blue (8 plates each, cream = light-pink placeholders) rebuilt via _imggen HTML->Chrome pipeline; navy wordmark + ring cert badges fixed on both pages; home.html National Tour partner logo wired. Committed AND PUSHED on feat/light-mode (5111a5d, 2026-07-20 — Pages demo auto-redeployed); awaiting client review. Merge is Anthony's.",
   "do_not_touch_main": true,
 
   "completed_2026_07_20_evening": [
@@ -17,7 +17,7 @@
   ],
 
   "open_items": [
-    "PUSH pending Anthony's explicit approval (push auto-deploys the Pages demo).",
+    "Pushed 2026-07-20 (5111a5d); awaiting client (Mike/Brant) review feedback.",
     "fl-02 pink plate: polish the minor black silhouette-edge residue next time plates are touched.",
     "roadrunner/flamingo people/construction.png lifestyle photos still dark on light pages — convert/replace/accept undecided.",
     "Cream colorway: swap in real plates when the client finally delivers cream renders.",

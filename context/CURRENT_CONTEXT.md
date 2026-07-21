@@ -1,4 +1,19 @@
-# Proton Peacock repo — CURRENT CONTEXT (2026-07-15)
+# Proton Peacock repo — CURRENT CONTEXT (2026-07-20)
+
+## LIGHT-MODE CONVERSION: ROADRUNNER + FLAMINGO (this session — see context/NEXT_SESSION.json)
+Peacock (`index.html`) + `home.html` were already light; Roadrunner + Flamingo PDPs were still DARK.
+- **Roadrunner: DONE** — full CSS dark→light flip + all 5 gallery/feature images recolored & installed
+  (dark backups in `roadrunner/assets/roadrunner/dark-backup/`). 05-build (dark neon-art) rebuilt as a
+  clean light edgeless-frame shot (Anthony-approved).
+- **Flamingo: CSS flip DONE, IMAGES PENDING** — recolor 8 pink images with `_imggen/recolor_v2.py --accent 214,53,126`, zoom-verify residue, back up darks.
+- **NEW residue-free tool: `_imggen/recolor_v2.py`** (builds product silhouette, un-mattes edges over white).
+- **Open both pages: nav+footer wordmark is white-on-white (invisible)** → swap to navy wordmark.
+- `home.html`: built `assets/partners/proton-national-tour.png` + wired into 'Who we back'. Hunter Games = text placeholder (no logo yet).
+- **Nothing committed. Branch feat/light-mode. Do NOT touch main.** HARD REQ: no black residue on paddle lettering/outline.
+
+---
+
+## (prior) HOMEPAGE v3 — REBUILT TO BRANT'S WIREFRAME (2026-07-15)
 
 ## HOMEPAGE v3 — REBUILT TO BRANT'S WIREFRAME (this session)
 `home.html` was fully restructured from the v2 *editorial* page into the **hub layout**

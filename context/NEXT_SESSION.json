@@ -1,21 +1,33 @@
 {
-  "updated": "2026-07-15",
+  "updated": "2026-07-20",
   "repo": "~/code/proton-peacock-pdp-preview",
   "branch": "feat/light-mode",
-  "state": "Homepage v3 rebuilt to Brant's wireframe (hub layout + video hero) with Mike's MLP cert change. Working tree only — NOT committed/pushed/merged.",
   "read_first": "context/CURRENT_CONTEXT.md",
-  "changed_files": ["home.html (restructured)", "assets/hero/proton-hero.mp4 (new)", "assets/hero/proton-hero-poster.jpg (new)"],
-  "proofs": ["~/Desktop/proton-HOMEPAGE-v3-wireframe-DESKTOP.png", "~/Desktop/proton-HOMEPAGE-v3-wireframe-MOBILE.png"],
-  "awaiting_anthony": [
-    "Review home.html (opened in browser; video hero plays live).",
-    "OK to commit + push feat/light-mode? (updates the live client Pages demo — outward-facing).",
-    "Official MLP logo art to replace the placeholder slot in the Sponsorships band."
+  "one_line": "Light-mode conversion COMPLETE for all 3 PDPs. Roadrunner (5 plates) + Flamingo pink/blue (8 plates each, cream = light-pink placeholders) rebuilt via _imggen HTML->Chrome pipeline; navy wordmark + ring cert badges fixed on both pages; home.html National Tour partner logo wired. Committed on feat/light-mode; push pending Anthony's approval.",
+  "do_not_touch_main": true,
+
+  "completed_2026_07_20_evening": [
+    "Roadrunner: 5 light plates (rr-01-aerograde, rr-02-core [native honeycomb panel], rr-03-kevlar-face, rr-04-dual-stamp, rr-05-build [real plate, not keyed stem]) built from transparent renders, installed over roadrunner/assets/roadrunner/.",
+    "Flamingo PINK: 8 light plates installed over flamingo/assets/flamingo/pink/. Plate 02 was botched twice (faint hex texture, then a rectangle overlapping the edge guard) before the correct fix: full-paddle silhouette extraction from the dark composite via _imggen/build_plate_fl02.py (Peacock build_plate_02.py method). Anthony accepted 02 as 'passable for now' — minor black edge residue at full size is a KNOWN TOUCH-UP.",
+    "Flamingo BLUE: 8 light plates (flb-*, _imggen/build_plate_flb02.py for 02) from the Downloads Blue renders, installed over flamingo/assets/flamingo/blue/. Blue accent vars; pink grip matches real product. Anthony approved the look.",
+    "Flamingo CREAM: client still never delivered cream renders (on them) — light PINK plates copied in as placeholders so the colorway toggle never shows dark images.",
+    "Wordmark fix both pages: proton-wordmark-navy.png copied into each page's assets/brand/, nav + footer srcs swapped from white (was invisible white-on-white).",
+    "Cert badges both pages: white embroidery seals (invisible on light) replaced with Peacock's approved typographic ring badges (UPA / USA / 30d).",
+    "home.html: Proton National Tour partner tile with reconstructed lockup asset (assets/partners/proton-national-tour.png)."
   ],
+
   "open_items": [
-    "MLP logo = styled placeholder slot (flagged in UI + HTML comment at .mlp-slot).",
-    "Instagram feed = static curated grid; wire live IG widget on Shopify build.",
-    "pablo-tellez.png is a 'SIGNED' graphic, not a clean roster headshot."
+    "PUSH pending Anthony's explicit approval (push auto-deploys the Pages demo).",
+    "fl-02 pink plate: polish the minor black silhouette-edge residue next time plates are touched.",
+    "roadrunner/flamingo people/construction.png lifestyle photos still dark on light pages — convert/replace/accept undecided.",
+    "Cream colorway: swap in real plates when the client finally delivers cream renders.",
+    "home.html: Hunter Games partner tile still a text placeholder (no clean logo); MLP logo placeholder; IG feed static."
   ],
-  "screenshot_tool": "/tmp/shot.mjs (node CDP full-page capture; needed because vh hero breaks tall-window Chrome screenshots). ffmpeg at ~/.local/bin/ffmpeg; ffprobe not installed.",
-  "still_pending_from_before": "Light Flamingo + Roadrunner PDP redos, then swap /flamingo /roadrunner bundles to go all-light."
+
+  "standing_rules": [
+    "ALL Proton images on white background (Anthony 2026-07-20).",
+    "NEVER recolor dark composites — only the _imggen/ HTML->Chrome plate pipeline from transparent renders. Cropping photographic insets and full-silhouette extraction (build_plate_02.py family) are sanctioned.",
+    "Self-QA at full res AND thumbnail scale; Anthony must never be the QA.",
+    "Merge is Anthony's; never touch main; ask before pushing."
+  ]
 }

@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--pk-teal:#3E7BF0;--pk-blue:#2F6FE0;--pk-purp:#1E4FB8;}</style>
+</head><body>
+<div class="stage">
+  <img class="paddle shift-up" src="src/rr-front.png" alt="" style="height:1470px;">
+
+  <!-- leader lines: label-anchor -> paddle-feature -->
+  <svg class="leads" viewBox="0 0 2048 2048">
+    <!-- Edgeless Frame -> smooth rounded left rail -->
+    <line x1="610" y1="520" x2="690" y2="520"/><circle cx="690" cy="520" r="6"/>
+    <!-- Aerodynamic Throat -> throat taper -->
+    <line x1="610" y1="1070" x2="905" y2="1120"/><circle cx="905" cy="1120" r="6"/>
+    <!-- Slim 15mm Profile -> right rail edge -->
+    <line x1="1438" y1="700" x2="1300" y2="700"/><circle cx="1300" cy="700" r="6"/>
+    <!-- Extended Handle -> grip -->
+    <line x1="1438" y1="1150" x2="985" y2="1400"/><circle cx="985" cy="1400" r="6"/>
+  </svg>
+
+  <div class="lab"   style="left:120px; top:488px;  width:470px;">Edgeless Frame</div>
+  <div class="lab"   style="left:120px; top:990px;  width:470px;">Aerodynamic<br>Throat</div>
+  <div class="lab r" style="right:120px; top:668px; width:470px;">Slim 15mm Profile</div>
+  <div class="lab r" style="right:120px; top:1080px; width:470px;">Extended<br>Handle</div>
+
+  <div class="title">
+    <h1>AERODYNAMIC BUILD</h1>
+    <div class="sub">Edgeless Frame · Extended Handle · 15mm</div>
+  </div>
+</div>
+</body></html>

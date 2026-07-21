@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>:root{--pk-teal:#2FA8E8;--pk-blue:#2F6FE0;--pk-purp:#1E50C8;}
+.core-plate{position:absolute;left:0;top:0;width:2048px;height:2048px;
+  filter:drop-shadow(0 46px 60px rgba(20,26,40,.18));}
+.stage .lab{text-transform:uppercase;font-weight:600;font-size:40px;line-height:1.18;letter-spacing:0.005em;}</style>
+</head><body>
+<div class="stage">
+  <!-- full-canvas cutaway plate: paddle silhouette WITH the client-approved honeycomb
+       cutaway baked inside it (blue edge guard intact, baked leaders removed) -->
+  <img class="core-plate" src="src/flb-core-cutaway-plate.png" alt="">
+
+  <!-- fresh leader lines: label -> feature (endpoints match the approved original) -->
+  <svg class="leads" viewBox="0 0 2048 2048">
+    <!-- Foam-Injected Edge Guard -> top-left paddle edge -->
+    <line x1="600" y1="232" x2="672" y2="229"/><circle cx="680" cy="228" r="7"/>
+    <!-- Polypropylene Honeycomb -> upper honeycomb hexes -->
+    <line x1="600" y1="502" x2="893" y2="500"/><circle cx="902" cy="500" r="7"/>
+    <!-- Solid Foam Core -> lower honeycomb hexes -->
+    <line x1="600" y1="758" x2="893" y2="757"/><circle cx="902" cy="757" r="7"/>
+    <!-- Foam Through the Handle -> handle -->
+    <line x1="600" y1="1424" x2="1014" y2="1423"/><circle cx="1023" cy="1423" r="7"/>
+  </svg>
+
+  <div class="lab" style="left:120px; top:184px;  width:495px;">Foam-Injected Edge<br>Guard</div>
+  <div class="lab" style="left:120px; top:454px;  width:495px;">Polypropylene<br>Honeycomb</div>
+  <div class="lab" style="left:120px; top:735px;  width:495px;">Solid Foam Core</div>
+  <div class="lab" style="left:120px; top:1377px; width:495px;">Foam Through the<br>Handle</div>
+
+  <div class="title hero">
+    <h1>VELOCITY FOAM CORE</h1>
+    <div class="sub">Foam + Honeycomb. Built for Pop &amp; Feel.</div>
+  </div>
+</div>
+</body></html>

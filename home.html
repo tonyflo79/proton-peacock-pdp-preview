@@ -306,7 +306,7 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 .partners-featured .ptile.plogo-nflpa img{ max-height:99px; max-width:84%; opacity:1; }
 .partners-featured .ptile.plogo-mlp img{ max-height:66px; max-width:90%; opacity:1; }
 
-.partners-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.4vw,18px); margin-top:clamp(14px,1.6vw,22px); }
+.partners-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.4vw,18px); margin-top:clamp(14px,1.6vw,22px); }
 .ptile{ display:flex; align-items:center; justify-content:center; height:120px; padding:24px;
   border:1px solid rgba(255,255,255,0.12); border-radius:14px; background:rgba(255,255,255,0.035); transition:.25s; }
 .ptile:hover{ background:rgba(255,255,255,0.07); border-color:rgba(127,193,234,0.45); }
@@ -323,10 +323,11 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 .ptile.plogo-pnt{ padding:12px; }
 .ptile.plogo-pnt img{ max-height:100px; max-width:92%; opacity:1; }
 .ptile.plogo-pbopen img{ max-height:88px; max-width:88%; opacity:1; }
+.ptile.plogo-reset img{ max-height:80px; max-width:80%; opacity:1; }
 .ptype{ text-align:center; }
 .ptype .pn{ display:block; font-family:var(--ff-display); font-weight:600; font-size:clamp(16px,1.5vw,19px); letter-spacing:-0.01em; color:#fff; opacity:.82; transition:opacity .25s; line-height:1.12; }
 .ptile:hover .ptype .pn{ opacity:1; }
-@media(max-width:820px){ .partners-grid{ grid-template-columns:repeat(2,1fr); } .partners-featured{ grid-template-columns:repeat(2,1fr); } .partners-featured .ptile{ height:148px; padding:24px; } }
+@media(max-width:820px){ .partners-grid{ grid-template-columns:repeat(2,1fr); } .partners-grid .ptile:last-child{ grid-column:span 2; } .partners-featured{ grid-template-columns:repeat(2,1fr); } .partners-featured .ptile{ height:148px; padding:24px; } }
 
 /* ============ Footer ============ */
 footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:clamp(46px,6vw,68px) 0 40px; color:var(--bone-3); }
@@ -643,6 +644,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div class="ptile plogo-mpo"><img src="assets/partners/mpo.png" alt="MPO" /></div>
       <div class="ptile plogo-pnt"><img src="assets/partners/proton-national-tour.png" alt="Proton National Tour — powered by MPO" /></div>
       <div class="ptile plogo-pbopen"><img src="assets/partners/paddle-battles-open.png" alt="Paddle Battles Open" /></div>
+      <div class="ptile plogo-reset"><img src="assets/partners/reset.png" alt="Reset" /></div>
     </div>
   </div>
 </section>

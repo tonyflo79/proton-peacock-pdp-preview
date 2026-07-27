@@ -416,16 +416,21 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <video id="heroVid" autoplay muted loop playsinline preload="metadata" poster="assets/hero/proton-hero-a-poster.jpg"></video>
   <script>
   // Hero video rotation — random variant per visit, sticky for the session.
+  // Force one with ?hero=a|b|c. Bump REV whenever the variant files are replaced in place.
   (function(){
-    var variants = ['a','b','c'], pick = null;
-    try{ pick = sessionStorage.getItem('protonHeroVariant'); }catch(e){}
-    if(variants.indexOf(pick) === -1){
-      pick = variants[Math.floor(Math.random()*variants.length)];
-      try{ sessionStorage.setItem('protonHeroVariant', pick); }catch(e){}
+    var variants = ['a','b','c'], REV = 2, pick = null;
+    var forced = (location.search.match(/[?&]hero=([abc])\b/) || [])[1];
+    if(forced){ pick = forced; }
+    else{
+      try{ pick = sessionStorage.getItem('protonHeroVariant'); }catch(e){}
+      if(variants.indexOf(pick) === -1){
+        pick = variants[Math.floor(Math.random()*variants.length)];
+        try{ sessionStorage.setItem('protonHeroVariant', pick); }catch(e){}
+      }
     }
     var v = document.getElementById('heroVid');
-    v.poster = 'assets/hero/proton-hero-' + pick + '-poster.jpg';
-    v.src = 'assets/hero/proton-hero-' + pick + '.mp4';
+    v.poster = 'assets/hero/proton-hero-' + pick + '-poster.jpg?v=' + REV;
+    v.src = 'assets/hero/proton-hero-' + pick + '.mp4?v=' + REV;
     v.dataset.variant = pick;
     if(window.dataLayer) window.dataLayer.push({event:'hero_video_variant', heroVariant:pick});
   })();

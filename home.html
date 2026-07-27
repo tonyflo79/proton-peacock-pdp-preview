@@ -322,6 +322,7 @@ a.pcard:hover .go .arr{ transform:translateX(4px); }
 .ptile.plogo-mpo img{ max-height:78px; max-width:86%; opacity:1; }
 .ptile.plogo-pnt{ padding:12px; }
 .ptile.plogo-pnt img{ max-height:100px; max-width:92%; opacity:1; }
+.ptile.plogo-pbopen img{ max-height:88px; max-width:88%; opacity:1; }
 .ptype{ text-align:center; }
 .ptype .pn{ display:block; font-family:var(--ff-display); font-weight:600; font-size:clamp(16px,1.5vw,19px); letter-spacing:-0.01em; color:#fff; opacity:.82; transition:opacity .25s; line-height:1.12; }
 .ptile:hover .ptype .pn{ opacity:1; }
@@ -411,9 +412,23 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
 <!-- ============ VIDEO HERO ============ -->
 <header class="vhero">
-  <video id="heroVid" autoplay muted loop playsinline preload="metadata" poster="assets/hero/proton-hero-poster.jpg">
-    <source src="assets/hero/proton-hero.mp4" type="video/mp4" />
-  </video>
+  <video id="heroVid" autoplay muted loop playsinline preload="metadata" poster="assets/hero/proton-hero-a-poster.jpg"></video>
+  <script>
+  // Hero video rotation — random variant per visit, sticky for the session.
+  (function(){
+    var variants = ['a','b','c'], pick = null;
+    try{ pick = sessionStorage.getItem('protonHeroVariant'); }catch(e){}
+    if(variants.indexOf(pick) === -1){
+      pick = variants[Math.floor(Math.random()*variants.length)];
+      try{ sessionStorage.setItem('protonHeroVariant', pick); }catch(e){}
+    }
+    var v = document.getElementById('heroVid');
+    v.poster = 'assets/hero/proton-hero-' + pick + '-poster.jpg';
+    v.src = 'assets/hero/proton-hero-' + pick + '.mp4';
+    v.dataset.variant = pick;
+    if(window.dataLayer) window.dataLayer.push({event:'hero_video_variant', heroVariant:pick});
+  })();
+  </script>
   <div class="scrim"></div>
   <button class="vsound" id="soundBtn" aria-label="Toggle sound" title="Toggle sound">🔇</button>
   <div class="wrap vinner">
@@ -627,7 +642,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div class="ptile plogo-kitchen"><img src="assets/partners/the-kitchen.png" alt="The Kitchen" /></div>
       <div class="ptile plogo-mpo"><img src="assets/partners/mpo.png" alt="MPO" /></div>
       <div class="ptile plogo-pnt"><img src="assets/partners/proton-national-tour.png" alt="Proton National Tour — powered by MPO" /></div>
-      <div class="ptile"><span class="ptype"><span class="pn">Hunter Games</span></span></div>
+      <div class="ptile plogo-pbopen"><img src="assets/partners/paddle-battles-open.png" alt="Paddle Battles Open" /></div>
     </div>
   </div>
 </section>

@@ -1,33 +1,24 @@
 {
-  "updated": "2026-07-20",
-  "repo": "~/code/proton-peacock-pdp-preview",
+  "written": "2026-07-27",
+  "session": "logo-kit-alignment + hero-rotation + partner-grid (Fable direct)",
   "branch": "feat/light-mode",
-  "read_first": "context/CURRENT_CONTEXT.md",
-  "one_line": "Light-mode conversion COMPLETE for all 3 PDPs. Roadrunner (5 plates) + Flamingo pink/blue (8 plates each, cream = light-pink placeholders) rebuilt via _imggen HTML->Chrome pipeline; navy wordmark + ring cert badges fixed on both pages; home.html National Tour partner logo wired. Committed AND PUSHED on feat/light-mode (5111a5d, 2026-07-20 — Pages demo auto-redeployed); awaiting client review. Merge is Anthony's.",
-  "do_not_touch_main": true,
-
-  "completed_2026_07_20_evening": [
-    "Roadrunner: 5 light plates (rr-01-aerograde, rr-02-core [native honeycomb panel], rr-03-kevlar-face, rr-04-dual-stamp, rr-05-build [real plate, not keyed stem]) built from transparent renders, installed over roadrunner/assets/roadrunner/.",
-    "Flamingo PINK: 8 light plates installed over flamingo/assets/flamingo/pink/. Plate 02 was botched twice (faint hex texture, then a rectangle overlapping the edge guard) before the correct fix: full-paddle silhouette extraction from the dark composite via _imggen/build_plate_fl02.py (Peacock build_plate_02.py method). Anthony accepted 02 as 'passable for now' — minor black edge residue at full size is a KNOWN TOUCH-UP.",
-    "Flamingo BLUE: 8 light plates (flb-*, _imggen/build_plate_flb02.py for 02) from the Downloads Blue renders, installed over flamingo/assets/flamingo/blue/. Blue accent vars; pink grip matches real product. Anthony approved the look.",
-    "Flamingo CREAM: client still never delivered cream renders (on them) — light PINK plates copied in as placeholders so the colorway toggle never shows dark images.",
-    "Wordmark fix both pages: proton-wordmark-navy.png copied into each page's assets/brand/, nav + footer srcs swapped from white (was invisible white-on-white).",
-    "Cert badges both pages: white embroidery seals (invisible on light) replaced with Peacock's approved typographic ring badges (UPA / USA / 30d).",
-    "home.html: Proton National Tour partner tile with reconstructed lockup asset (assets/partners/proton-national-tour.png)."
+  "state": "ALL SHIPPED — commits 5927237 (logo kit), 9ec46a4 (rotation v1), 0a5f610 (rotation v2 action-first + Reset tile); pushed; Pages serves feat/light-mode",
+  "live": "https://tonyflo79.github.io/proton-peacock-pdp-preview/home.html",
+  "shipped": [
+    "Official wordmark on Peacock nav+footer (was atom + typed PROTON); heights 23/32px matching Flamingo/Roadrunner",
+    "New white-P atom (assets/brand/proton-atom-white-p.png, from 'Logo Assets (1)/Atom Logo.ai white P.ai') on home navy partners band; duplicate proton-wordmark.png deleted",
+    "Hero rotation: random per visit, sessionStorage-sticky, data-variant + dataLayer event; a = Mike's 30s brand spot (720p, audio kept), b = reel 2.375-12.79s mid-rally open, c = reel 17.92-28.42s net-strike open; per-variant posters; full 38s reel kept as source-of-record",
+    "Partners: Hunter Games text tile -> Paddle Battles Open logo; + Reset logo (black ink knocked to white); secondary grid 4-col -> 3x3; mobile last-child spans 2"
   ],
-
-  "open_items": [
-    "Pushed 2026-07-20 (5111a5d); awaiting client (Mike/Brant) review feedback.",
-    "fl-02 pink plate: polish the minor black silhouette-edge residue next time plates are touched.",
-    "roadrunner/flamingo people/construction.png lifestyle photos still dark on light pages — convert/replace/accept undecided.",
-    "Cream colorway: swap in real plates when the client finally delivers cream renders.",
-    "home.html: Hunter Games partner tile still a text placeholder (no clean logo); MLP logo placeholder; IG feed static."
+  "open": [
+    "Anthony review of hero slices + grid; Mike review of everything",
+    "All 3 preview repos were ARCHIVED 2026-07-24; peacock UNARCHIVED 2026-07-27 to push — Anthony may want to re-archive after this round (flamingo/roadrunner still archived)",
+    "When client sends purpose-made hero cuts, swap proton-hero-{a,b,c}.mp4 + posters in place (no code change)",
+    "Rotation not yet ported to Shopify Dawn (same JS goes in the section liquid when asked)"
   ],
-
-  "standing_rules": [
-    "ALL Proton images on white background (Anthony 2026-07-20).",
-    "NEVER recolor dark composites — only the _imggen/ HTML->Chrome plate pipeline from transparent renders. Cropping photographic insets and full-silhouette extraction (build_plate_02.py family) are sanctioned.",
-    "Self-QA at full res AND thumbnail scale; Anthony must never be the QA.",
-    "Merge is Anthony's; never touch main; ask before pushing."
+  "gotchas": [
+    "Reel's last ~10s (28.4s+) is the animated atom outro — never open or end a slice inside it without intent",
+    ".ai kit files are PDF-compatible: use pdftocairo -png -transp (sips fails silently, pymupdf absent); ffmpeg at ~/.local/bin/ffmpeg, NO ffprobe (use ffmpeg -i)",
+    "Standard atom badge is navy (light-bg use); white-P atom is the dark-bg variant — that's the ONLY delta in the 'Logo Assets (1)' kit"
   ]
 }

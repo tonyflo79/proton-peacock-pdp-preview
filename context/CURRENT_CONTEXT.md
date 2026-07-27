@@ -1,4 +1,15 @@
-# Proton Peacock repo — CURRENT CONTEXT (2026-07-20)
+# Proton Peacock repo — CURRENT CONTEXT (2026-07-27)
+
+## SESSION 2026-07-27: LOGO KIT + HERO ROTATION + PARTNERS (see context/NEXT_SESSION.json — SHIPPED, all pushed)
+- Official wordmark on Peacock nav/footer; white-P atom (new kit file) on home navy band; dup wordmark deleted (5927237)
+- Hero: random-per-visit rotation, action-first slices; a=Mike's 30s spot (audio kept), b=reel 2.375-12.79s, c=reel 17.92-28.42s; reel outro at 28.4s+ excluded (9ec46a4 -> 0a5f610)
+- Partners: Paddle Battles Open replaces Hunter Games; Reset added (black->white knockout); grid 3x3 (0a5f610)
+- REPO WAS ARCHIVED 2026-07-24; unarchived 2026-07-27 to push. Re-archive = Anthony's call.
+- Live: https://tonyflo79.github.io/proton-peacock-pdp-preview/home.html
+
+---
+
+# PREVIOUS — CURRENT CONTEXT (2026-07-20)
 
 ## LIGHT-MODE CONVERSION: ROADRUNNER + FLAMINGO (this session — see context/NEXT_SESSION.json)
 Peacock (`index.html`) + `home.html` were already light; Roadrunner + Flamingo PDPs were still DARK.

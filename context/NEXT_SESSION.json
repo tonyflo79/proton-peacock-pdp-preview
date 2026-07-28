@@ -1,24 +1,33 @@
 {
-  "written": "2026-07-27",
-  "session": "logo-kit-alignment + hero-rotation + partner-grid (Fable direct)",
+  "written": "2026-07-28",
+  "session": "client round 2026-07-28 — lineup rebrand + live IG + 4x4 partners (Fable direct)",
   "branch": "feat/light-mode",
-  "state": "ALL SHIPPED — commits 5927237 (logo kit), 9ec46a4 (rotation v1), 0a5f610 (rotation v2 action-first + Reset tile); pushed; Pages serves feat/light-mode",
+  "state": "ALL SHIPPED — commit bcb0878 pushed; live verified via headless-Chrome screenshot of the Pages URL (deploy took ~75s)",
   "live": "https://tonyflo79.github.io/proton-peacock-pdp-preview/home.html",
   "shipped": [
-    "Official wordmark on Peacock nav+footer (was atom + typed PROTON); heights 23/32px matching Flamingo/Roadrunner",
-    "New white-P atom (assets/brand/proton-atom-white-p.png, from 'Logo Assets (1)/Atom Logo.ai white P.ai') on home navy partners band; duplicate proton-wordmark.png deleted",
-    "Hero rotation: random per visit, sessionStorage-sticky, data-variant + dataLayer event; a = Mike's 30s brand spot (720p, audio kept), b = reel 2.375-12.79s mid-rally open, c = reel 17.92-28.42s net-strike open; per-variant posters; full 38s reel kept as source-of-record",
-    "Partners: Hunter Games text tile -> Paddle Battles Open logo; + Reset logo (black ink knocked to white); secondary grid 4-col -> 3x3; mobile last-child spans 2"
+    "Promo bar: 'Premier Partner of the PPA' + 'Power Your Play With Proton' added; Roadrunner-new msg deleted",
+    "Lineup section: kicker 'The Proton Lineup', h2 'PLAY. HIT. WEAR.', Anthony's positioning paragraph as helper ('Parter' typo fixed to Partner)",
+    "'The Starting Lineup / Meet the Paddles.'; card order Peacock-Bats-Flamingo-Roadrunner (NEW pill stays on Roadrunner); drawer link renamed",
+    "Kickers 13px->17.5px (+35%, hero/lineup/pros/etc); partners kicker clamp(19,2.1vw,26px) — read 'near half the size of bottom' as vs the Who-we-back headline",
+    "Pros h2: 'The players who compete with Proton.'",
+    "Partners: single 4-across x 4-row grid (16 tiles, leagues top row, 150px tiles, per-logo sizing); partners paragraph leads with Premier Partner of the PPA",
+    "NEW partner logos: hunters-games.png (2k bytedance upscale of 100px IG profile pic), good-sport.png (Good Sport Foundation, white-matte removal), sparms.png (white knockout), udrippin.png (native white PNG); pipeline in assets/partners/src/process2.py",
+    "IG section LIVE: 8 official instagram.com/p/<code>/embed iframes of real July-2026 posts (shortcodes via Apify apify/instagram-post-scraper on proton.sports); handle fixed @protonsports -> @proton.sports everywhere",
+    "Footer Company + drawer: About Us (/pages/about-us-2), News (/blogs/news), Warranty links (verified live URLs; /pages/about-us is 404, about-us-2 is correct)"
   ],
   "open": [
-    "Anthony review of hero slices + grid; Mike review of everything",
-    "All 3 preview repos were ARCHIVED 2026-07-24; peacock UNARCHIVED 2026-07-27 to push — Anthony may want to re-archive after this round (flamingo/roadrunner still archived)",
-    "When client sends purpose-made hero cuts, swap proton-hero-{a,b,c}.mp4 + posters in place (no code change)",
-    "Rotation not yet ported to Shopify Dawn (same JS goes in the section liquid when asked)"
+    "Hunter's Games logo is an AI upscale of a 100px IG avatar — ask Mike for the real badge file, rerun process2.py",
+    "TRUE auto-updating IG feed (new posts flow in automatically) needs a widget (Instafeed on Shopify / Elfsight) connected once to @proton.sports by Mike's team; current embeds pull live likes/captions but the post SET is pinned",
+    "Confirm with Anthony: promo says 'Premier Partner' singular (his notes had 'Partners'/'Parter'); partners-kicker size interpreted as ~half of 'Who we back.'",
+    "Mobile IG section is long (8 stacked full embeds) — fine for preview, the widget will compact it on Shopify",
+    "Prior open items stand: hero cut swap-in when client sends purpose-made cuts; rotation not yet ported to Shopify Dawn; flamingo/roadrunner repos still on redirect branches"
   ],
   "gotchas": [
-    "Reel's last ~10s (28.4s+) is the animated atom outro — never open or end a slice inside it without intent",
-    ".ai kit files are PDF-compatible: use pdftocairo -png -transp (sips fails silently, pymupdf absent); ffmpeg at ~/.local/bin/ffmpeg, NO ffprobe (use ffmpeg -i)",
-    "Standard atom badge is navy (light-bg use); white-P atom is the dark-bg variant — that's the ONLY delta in the 'Logo Assets (1)' kit"
+    "Never push main; Pages serves feat/light-mode; poll live URL after push (~1-2 min)",
+    "Headless Chrome verify needs --virtual-time-budget=15000 now (IG iframes need network time)",
+    "?hero=a|b|c override; REV=2 cache-buster in hero script; reel outro at 28.4s+ never included",
+    "Instagram anonymous scraping is dead — Googlebot-UA curl yields only og: meta; use Apify apify/instagram-post-scraper for shortcodes",
+    "Real IG handle is proton.sports (dot), NOT protonsports",
+    ".ai kit files are PDF: pdftocairo -png -transp; ffmpeg at ~/.local/bin/ffmpeg, no ffprobe"
   ]
 }

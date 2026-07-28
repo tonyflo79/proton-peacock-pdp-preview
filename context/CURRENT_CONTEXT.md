@@ -1,4 +1,17 @@
-# Proton Peacock repo — CURRENT CONTEXT (2026-07-27)
+# Proton Peacock repo — CURRENT CONTEXT (2026-07-28)
+
+## SESSION 2026-07-28: CLIENT ROUND — LINEUP REBRAND + LIVE IG + 4x4 PARTNERS (bcb0878, pushed)
+- Promo bar: Premier Partner of the PPA / MLP / free ship / "Power Your Play With Proton"; Roadrunner msg deleted
+- "The Proton Lineup / PLAY. HIT. WEAR." replaces Shop-by-sport; new positioning paragraph (Anthony's copy verbatim, "Parter" typo fixed)
+- "The Starting Lineup / Meet the Paddles."; card order Peacock–Bats–Flamingo–Roadrunner; pros h2 "with Proton"
+- Kickers 13px→17.5px (+35%); partners kicker ~26px (read Anthony's "near half the size" as vs the Who-we-back headline)
+- Partners: ONE 4×4 grid (leagues top row, tiles 150px, logos up-sized); NEW: hunters-games.png (2k AI upscale of
+  100px IG profile pic — get real asset from Mike), good-sport.png (Good Sport Foundation), sparms.png, udrippin.png; src/process2.py
+- IG section is LIVE: 8 official /embed iframes of real @proton.sports posts (scraped shortcodes via Apify 2026-07-28).
+  HANDLE FIX: @protonsports → @proton.sports everywhere. True auto-updating feed still needs a widget
+  (Instafeed/Elfsight) connected once by Mike's team — embeds are pinned posts, they update live but the SET is fixed.
+- Footer/drawer: About Us (/pages/about-us-2), News (/blogs/news), Warranty links added.
+
 
 ## SESSION 2026-07-27: LOGO KIT + HERO ROTATION + PARTNERS (see context/NEXT_SESSION.json — SHIPPED, all pushed)
 - Official wordmark on Peacock nav/footer; white-P atom (new kit file) on home navy band; dup wordmark deleted (5927237)
